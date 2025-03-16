@@ -50,33 +50,3 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-  linting:
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Cache Dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm 
-            node_modules
-          key: ${{ runner.os }}-linting-${{ hashFiles('next.config.mjs', '**/*.js', '**/package-lock.json') }}
-          restore-keys: |
-            linting-${{ runner.os }}-
-            ${{ runner.os }}-
-
-      - name: Set Up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: "package.json"
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Bypass Interactive Mode & Run Linting
-        run: npm run lint

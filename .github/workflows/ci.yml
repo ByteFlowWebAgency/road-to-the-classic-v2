@@ -78,5 +78,5 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run Linting
-        run: npm run lint
+      - name: Bypass Interactive Mode & Run Linting
+        run: npm run lint -- --no-interative

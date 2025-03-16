@@ -79,4 +79,4 @@ jobs:
         run: npm ci
 
       - name: Bypass Interactive Mode & Run Linting
-        run: npm run lint -- --no-interactive
+        run: npm run lint

@@ -121,3 +121,87 @@
     @apply bg-background text-foreground;
   }
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 0 0 0;
+    --card: 255 255 255;
+    --card-foreground: 0 0 0;
+    --popover: 255 255 255;
+    --popover-foreground: 0 0 0;
+    --primary: 26 35 126;  /* #1a237e */
+    --primary-foreground: 255 255 255;
+    --secondary: 241 245 249;
+    --secondary-foreground: 15 23 42;
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139;
+    --accent: 241 245 249;
+    --accent-foreground: 15 23 42;
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 26 35 126;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0 0;
+    --foreground: 255 255 255;
+    --card: 15 23 42;
+    --card-foreground: 255 255 255;
+    --popover: 15 23 42;
+    --popover-foreground: 255 255 255;
+    --primary: 26 35 126;
+    --primary-foreground: 255 255 255;
+    --secondary: 30 41 59;
+    --secondary-foreground: 255 255 255;
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
+    --accent: 30 41 59;
+    --accent-foreground: 255 255 255;
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+    --border: 30 41 59;
+    --input: 30 41 59;
+    --ring: 26 35 126;
+  }
+
+  * {
+    @apply border-[rgb(var(--border))];
+  }
+
+  body {
+    @apply bg-[rgb(var(--background))] text-[rgb(var(--foreground))] antialiased min-h-screen;
+  }
+
+  /* Additional base styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-[-.025em];
+  }
+
+  h1 {
+    @apply text-[2.5rem] md:text-[3rem] lg:text-[3.75rem];
+  }
+
+  h2 {
+    @apply text-[2rem] md:text-[2.5rem] lg:text-[3rem];
+  }
+
+  h3 {
+    @apply text-[1.5rem] md:text-[2rem] lg:text-[2.5rem];
+  }
+
+  p {
+    @apply leading-[1.75];
+  }
+
+  .container {
+    @apply px-[1rem] md:px-[1.5rem] mx-auto max-w-[80rem];
+  }
+}

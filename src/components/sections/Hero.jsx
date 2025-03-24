@@ -26,16 +26,14 @@ export function Hero() {
           </h1>
           <div className="flex gap-4">
             <Button 
-              variant="outline" 
+              variant="primary" 
               size="lg"
-              className="bg-[#1e3a8a] text-white hover:bg-[#1e3a8a]/90 border-white"
             >
               Learn More
             </Button>
             <Button 
-              variant="outline" 
+              variant="primary" 
               size="lg"
-              className="bg-[#1e3a8a] text-white hover:bg-[#1e3a8a]/90 border-white"
             >
               Get Involved
             </Button>

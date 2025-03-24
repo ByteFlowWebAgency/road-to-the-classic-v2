@@ -36,25 +36,31 @@ export function Vision() {
   return (
     <div className="relative">
       {/* Vision Section */}
-      <section className="py-20 bg-[#1e3a8a]">
+      <section className="py-20 bg-[#1a237e]">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-white mb-16">
             OUR VISION
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {visionItems.map((item, index) => (
-              <div key={index} className="flex flex-col">
-                <div className="aspect-w-16 aspect-h-9 mb-4">
+              <div key={index} className="relative rounded-lg overflow-hidden">
+                <div className="aspect-[4/3] relative">
                   <Image
                     src={item.image}
                     alt={item.title}
-                    width={400}
-                    height={300}
-                    className="rounded-lg object-cover w-full h-full"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   />
+                  {/* Dark gradient overlay at bottom for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  
+                  {/* Text container at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-white/80 text-sm">{item.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-white/80 text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -62,7 +68,7 @@ export function Vision() {
       </section>
 
       {/* Events Section with Arc Design */}
-      <section className="relative bg-[#1e3a8a]">
+      <section className="relative bg-[#1a237e]">
         <div className="container mx-auto px-4 pb-32">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">UPCOMING EVENTS</h2>

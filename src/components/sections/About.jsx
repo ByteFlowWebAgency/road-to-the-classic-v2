@@ -4,7 +4,20 @@ export function About() {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
+
+        <div className="text-center bg-[#1a237e] rounded-lg p-6">
+
+          <h2 className="text-3xl font-bold mb-6 text-white text-center">ABOUT US</h2>
+          <p className="text-white text-center mb-6 leading-relaxed">
+            Learn about our mission, vision, and the core principles that 
+            drive our work to empower youth through education and HBCU awareness.
+          </p>
+
+        </div>
+
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
           <div>
             <h2 className="text-3xl font-bold mb-6 text-[#1a237e]">EMPOWERING YOUTH</h2>
             <p className="text-gray-700 mb-6 leading-relaxed">

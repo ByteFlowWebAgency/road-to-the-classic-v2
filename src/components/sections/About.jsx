@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Heading2 } from "../ui"
+import { Button } from "@/components/ui/button";
 
 const corePrinciplesItems = [
   {
@@ -35,8 +35,6 @@ const corePrinciplesItems = [
     description: 'Provide positive alternatives to decrease violence and unhealthy behaviors.',
   },
 ];
-
-
 
 
 export function About() {
@@ -86,8 +84,8 @@ export function About() {
           <div className="order-first lg:order-last flex items-start ">
             <div className="aspect-[4/3] relative rounded-lg overflow-hidden w-full h-[350px] ">
               <Image
-                src="/images/IMG_5015.jpg"
-                alt="Student with mascot"
+                src="/images/MISSION_VISION.png"
+                alt="Mission and Vision Image"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -97,8 +95,6 @@ export function About() {
 
         </div>
       </div>
-
-
 
       {/* Who We Are Section*/}
       <div className="bg-gray-200 py-2 mt-5">
@@ -112,7 +108,7 @@ export function About() {
             <div className="order-first lg:order-none ">
               <div className="aspect-[4/3] relative rounded-lg overflow-hidden w-full">
                 <Image
-                  src="/images/IMG_5015.jpg"
+                  src="/images/WHO_WE_ARE.png"
                   alt="Who We Are Image"
                   fill
                   className="object-cover"
@@ -144,10 +140,7 @@ export function About() {
 
       </div>
 
-
-      
       {/* Our Core Principles Section */}
-
       <section className="relative bg-[#1a237e] py-10">
         <div className="container mx-auto px-4 pb-32">
           <h2 className="text-3xl font-bold text-white text-center mb-12">Our Core Principles</h2>
@@ -165,7 +158,66 @@ export function About() {
         </div>
       
       </section>
-    
+
+
+      {/* Join Our Mission Section */}
+      <div className="container mx-auto px-6 mt-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+          <div className="space-y-10">
+
+            <div>
+              <h2 className="text-3xl font-bold mb-4 text-[#1a237e]">Join Our Mission</h2>
+              <p className="text-gray-700 leading-relaxed">
+                By providing positive alternatives and using data driven and evidence-based prevention measures, 
+                we can decrease the amount of violence, alcohol and drug use as well as unhealthy behaviors that devalue the community.
+              </p>
+            </div>
+
+            <div className="flex gap-4">
+              <Button className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4" variant="primary">Get Involved</Button>
+
+              <Button className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4" variant="outline">Learn More</Button>
+            </div>
+
+           
+          </div>
+
+
+          <div className="order-first lg:order-last flex items-start ">
+            <div className="aspect-[4/3] relative rounded-lg overflow-hidden w-full h-[350px] ">
+              <Image
+                src="/images/JOIN_OUR_MISSION.png"
+                alt="Join Our Mission Image"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+ 
+      {/* Become A Sponsor Section */}
+      <section className="relative bg-[#1a237e] py-16  mt-10 flex items-center justify-center text-white">
+
+        <div className="container mx-auto px-4 flex flex-col items-center text-center space-y-10">
+          <h2 className="text-3xl font-bold">Become A Sponsor</h2>
+
+          <p className="max-w-2xl">
+            Join our community of supporters and help us make a difference. Your sponsorship directly contributes to our mission.
+          </p>
+
+          <Button className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base md:px-15 md:py-5 text-[#1a237e]" variant="outline">
+            Support Our Course <span className="text-lg">→</span>
+          </Button>
+
+        </div>
+
+      </section>
+
     </section>
   )
 } 

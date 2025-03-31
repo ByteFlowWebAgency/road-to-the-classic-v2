@@ -1,6 +1,44 @@
 import Image from "next/image"
 import { Heading2 } from "../ui"
 
+const corePrinciplesItems = [
+  {
+    title: 'Unity',
+    description: 'Celebrate cultural diversity and history through shared experiences.',
+  },
+  {
+    title: 'Self-Determination',
+    description: 'Empower students to pursue education and goals through mentorship.',
+  },
+  {
+    title: 'Collective Work & Responsibility',
+    description: 'Build stronger communities across discipline and entrepreneurship.',
+  },
+  {
+    title: 'Cooperative Economics',
+    description: 'Develop financial literacy and business skills for future success.',
+  },
+  {
+    title: 'Purpose',
+    description: 'Guide youth to discover their unique talents and contributions.',
+  },
+  {
+    title: 'Creativity',
+    description: 'Foster innovation and artistic expression in all endeavors.',
+  },
+  {
+    title: 'Faith',
+    description: 'Encourage self-actualization and belief in one\'s potential.',
+  },
+  {
+    title: 'Prevention Measures',
+    description: 'Provide positive alternatives to decrease violence and unhealthy behaviors.',
+  },
+];
+
+
+
+
 export function About() {
   return (
     <section className="pt-0 py-16 bg-white">
@@ -67,13 +105,12 @@ export function About() {
 
         <div className="container mx-auto px-6 mt-10">
 
-         
           <h2 className="text-3xl font-bold my-5 text-[#1a237e] text-center">Who We Are</h2>
             
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center my-10">
             
             <div className="order-first lg:order-none ">
-              <div className="aspect-[4/3] relative rounded-lg overflow-hidden w-full h-[350px] ">
+              <div className="aspect-[4/3] relative rounded-lg overflow-hidden w-full">
                 <Image
                   src="/images/IMG_5015.jpg"
                   alt="Who We Are Image"
@@ -107,6 +144,27 @@ export function About() {
 
       </div>
 
+
+      
+      {/* Our Core Principles Section */}
+
+      <section className="relative bg-[#1a237e] py-10">
+        <div className="container mx-auto px-4 pb-32">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Our Core Principles</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {corePrinciplesItems.map((event, index) => (
+              <div
+                key={index}
+                className="bg-white/5 p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all cursor-pointer"
+              >
+                <h3 className="text-xl font-bold text-white mb-2">{event.title}</h3>
+                <p className="text-white/70 text-sm">{event.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      
+      </section>
     
     </section>
   )

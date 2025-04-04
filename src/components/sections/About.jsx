@@ -17,7 +17,7 @@ export function About() {
           <div className="order-first lg:order-last">
             <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
               <Image
-                src="/images/IMG_5015.jpg"
+                src="/images/IMG_2242.jpg"
                 alt="Student with mascot"
                 fill
                 className="object-cover"

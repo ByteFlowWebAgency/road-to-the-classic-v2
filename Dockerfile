@@ -24,6 +24,7 @@ WORKDIR /app
 COPY --from=builder /app/package*.json /app/
 COPY --from=builder /app/.next /app/.next
 COPY --from=builder /app/public /app/public
+COPY --from=builder /app/next.config.mjs /app/
 
 # Install production dependencies
 RUN npm ci --only=production

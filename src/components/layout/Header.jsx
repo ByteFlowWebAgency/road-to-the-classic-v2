@@ -7,6 +7,7 @@ const navItems = [
   { label: 'IMPACT', href: '/impact' },
   { label: 'EVENTS', href: '/events' },
   { label: 'PARTNERS & SPONSORS', href: '/partners' },
+  { label: 'HALL OF FAME', href: '/HOF' },
 ];
 
 export function Header() {
@@ -23,12 +24,20 @@ export function Header() {
           />
         </Link>
       </div>
-      <nav className="flex gap-6 text-sm font-medium">
+      {/* <nav className="flex gap-6 text-sm font-medium">
         <Link href="/about" className="hover:text-[#1a237e]">ABOUT</Link>
         <Link href="/impact" className="hover:text-[#1a237e]">IMPACT</Link>
         <Link href="/events" className="hover:text-[#1a237e]">EVENTS</Link>
         <Link href="/partners" className="hover:text-[#1a237e]">PARTNERS & SPONSORS</Link>
-      </nav>
+      </nav> */}
+      <nav className="flex gap-6 text-sm font-medium">
+  {/* Dynamically rendering links from the navItems array */}
+  {navItems.map((item) => (
+    <Link key={item.label} href={item.href} className="hover:text-[#1a237e]">
+      {item.label}
+    </Link>
+  ))}
+</nav>
     </header>
   );
 } 

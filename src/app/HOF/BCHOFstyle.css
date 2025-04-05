@@ -1,0 +1,37 @@
+.fullscreen-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fullscreen-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+
+/*h1 ANIMATION*/
+@keyframes slideInOut {
+    0% {
+      transform: translateX(-100%); 
+    }
+    50% {
+      transform: translateX(0); 
+    }
+    100% {
+      transform: translateX(100%); 
+    }
+  }
+  
+  .heading-animation {
+    animation: slideInOut 10s linear infinite; 
+    white-space: nowrap; 
+  }
+  

@@ -84,7 +84,7 @@ export function About() {
           <div className="order-first lg:order-last flex items-start ">
             <div className="aspect-[4/3] relative rounded-lg overflow-hidden w-full h-[350px] ">
               <Image
-                src="/images/MISSION_VISION.png"
+                src="/images/IMG_4300.jpg"
                 alt="Mission and Vision Image"
                 fill
                 className="object-cover"
@@ -108,7 +108,7 @@ export function About() {
             <div className="order-first lg:order-none ">
               <div className="aspect-[4/3] relative rounded-lg overflow-hidden w-full">
                 <Image
-                  src="/images/WHO_WE_ARE.png"
+                  src="/images/IMG_5159.jpg"
                   alt="Who We Are Image"
                   fill
                   className="object-cover"
@@ -133,6 +133,25 @@ export function About() {
            
             </div>
 
+          </div>
+
+          {/* Video Section */}
+          <div className="mt-16 text-center">
+            <h2 className="text-3xl font-bold mb-6 text-[#1a237e]">Experience Our Programs</h2>
+            <p className="text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Watch our students engage in interactive learning experiences that combine education with fun. 
+              These activities are designed to foster critical thinking, teamwork, and creativity.
+            </p>
+            <div className="aspect-video relative rounded-lg overflow-hidden max-w-4xl mx-auto">
+              <video
+                src="/images/Playing a bord game-1.mp4"
+                controls
+                className="w-full h-full object-cover"
+                preload="metadata"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
 
       </div>

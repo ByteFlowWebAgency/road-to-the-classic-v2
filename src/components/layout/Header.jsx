@@ -6,7 +6,7 @@ const navItems = [
   { label: 'ABOUT', href: '/about' },
   { label: 'IMPACT', href: '/impact' },
   { label: 'EVENTS', href: '/events' },
-  { label: 'PARTNERS & SPONSORS', href: '/partners' },
+  { label: 'CONTACT US', href: '/contact' },
 ];
 
 export function Header() {
@@ -27,7 +27,7 @@ export function Header() {
         <Link href="/about" className="hover:text-[#1a237e]">ABOUT</Link>
         <Link href="/impact" className="hover:text-[#1a237e]">IMPACT</Link>
         <Link href="/events" className="hover:text-[#1a237e]">EVENTS</Link>
-        <Link href="/partners" className="hover:text-[#1a237e]">PARTNERS & SPONSORS</Link>
+        <Link href="/contact" className="hover:text-[#1a237e]">CONTACT US</Link>
       </nav>
     </header>
   );

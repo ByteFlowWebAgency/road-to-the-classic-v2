@@ -10,7 +10,7 @@ const navItems = [
   { label: 'ABOUT', href: '/about' },
   { label: 'IMPACT', href: '/impact' },
   { label: 'EVENTS', href: '/events' },
-  { label: 'PARTNERS & SPONSORS', href: '/partners' },
+  { label: 'CONTACT US', href: '/contact' },
 ];
 
 export function Header() {
@@ -100,6 +100,19 @@ export function Header() {
           </div>
         </div>
       </div>
+
+      {/* Additional Bottom Navigation using navItems */}
+      <nav className="flex gap-6 text-sm font-medium justify-center mt-4">
+        {navItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="hover:text-[#1a237e]"
+          >
+            {item.label}
+          </Link>
+        ))}
+      </nav>
     </header>
   );
-} 
+}

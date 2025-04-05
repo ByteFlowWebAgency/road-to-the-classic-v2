@@ -1,4 +1,62 @@
 import Image from 'next/image';
+import { events } from '@/data/events';
+import { Calendar, Clock, MapPin, User } from 'lucide-react';
+
+// Helper function to extract date object from date string
+const getEventDate = (dateStr) => {
+  // Handle date ranges (e.g., "August 12-14, 2023")
+  const dateRangeMatch = dateStr.match(/(\w+)\s+(\d+)(?:-\d+)?(?:,\s*(\d{4}))?/);
+  if (!dateRangeMatch) return null;
+  
+  const [_, month, day, yearStr] = dateRangeMatch;
+  const year = yearStr ? parseInt(yearStr) : 2025; // Default to 2025 if year not specified
+  
+  const monthMap = {
+    "January": 0, "February": 1, "March": 2, "April": 3, 
+    "May": 4, "June": 5, "July": 6, "August": 7, 
+    "September": 8, "October": 9, "November": 10, "December": 11
+  };
+  
+  return new Date(year, monthMap[month], parseInt(day));
+};
+
+// Format date for display
+const formatEventDate = (dateStr) => {
+  const date = getEventDate(dateStr);
+  if (!date) return dateStr;
+
+  // Check if it's a date range
+  if (dateStr.includes("-")) {
+    return dateStr; // Keep original format for ranges
+  }
+
+  // Format single dates
+  return date.toLocaleDateString('en-US', {
+    weekday: 'short',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+};
+
+// Get upcoming events
+const getUpcomingEvents = () => {
+  const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0); // Normalize to start of day
+
+  return events
+    .filter(event => {
+      const eventDate = getEventDate(event.date);
+      if (!eventDate) return false;
+      return eventDate >= currentDate;
+    })
+    .sort((a, b) => {
+      const dateA = getEventDate(a.date);
+      const dateB = getEventDate(b.date);
+      return dateA - dateB;
+    })
+    .slice(0, 6); // Show next 6 upcoming events
+};
 
 const visionItems = [
   {
@@ -23,16 +81,9 @@ const visionItems = [
   }
 ];
 
-const eventItems = [
-  { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
-  { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
-  { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
-  { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
-  { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
-  { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
-];
-
 export function Vision() {
+  const upcomingEvents = getUpcomingEvents();
+
   return (
     <div className="relative">
       {/* Vision Section */}
@@ -76,17 +127,43 @@ export function Vision() {
               Join us for these exciting opportunities to learn, grow, and connect with the HBCU community.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {eventItems.map((event, index) => (
-              <div
-                key={index}
-                className="bg-white/5 p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all cursor-pointer"
-              >
-                <h3 className="text-xl font-bold text-white mb-2">{event.title}</h3>
-                <p className="text-white/70 text-sm">{event.description}</p>
-              </div>
-            ))}
-          </div>
+          
+          {upcomingEvents.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {upcomingEvents.map((event, index) => (
+                <div
+                  key={index}
+                  className="bg-white/5 p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all cursor-pointer group"
+                >
+                  <div className="flex items-center gap-2 text-blue-400 mb-2">
+                    <Calendar className="h-4 w-4" />
+                    <span className="text-sm font-medium">{formatEventDate(event.date)}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-blue-400 transition-colors">
+                    {event.title}
+                  </h3>
+                  <div className="space-y-2 text-white/70 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4" />
+                      <span>{event.time}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4" />
+                      <span>{event.location}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <User className="h-4 w-4" />
+                      <span>Host: {event.host}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center text-white/70">
+              <p>No upcoming events scheduled at this time. Please check back later!</p>
+            </div>
+          )}
         </div>
         
         {/* Arc Design */}

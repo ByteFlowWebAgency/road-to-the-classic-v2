@@ -1,17 +1,17 @@
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 export function Hero() {
   return (
-    <section className="relative h-[600px] w-full">
-      {/* Background Image */}
+    <section className="relative h-[600px] w-full overflow-hidden">
+      {/* Background Video */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/IMG_5015.jpg"
-          alt="Students in classroom"
-          fill
-          className="object-cover"
-          priority
+        <video
+          src="/images/Takling to a class-1.mp4"
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/40" />

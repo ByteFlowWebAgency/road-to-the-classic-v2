@@ -23,7 +23,7 @@ services:
       context: .
       target: production
     volumes:
-      - ./app/public:/app/public
+      - ./public:/app/public
     ports:
       - "3001:3001"
     environment:

@@ -9,7 +9,7 @@ export function Mission() {
           <div>
             <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
               <Image
-                src="/images/IMG_5651.jpg"
+                src="/images/image 10.png"
                 alt="Students participating in activities"
                 fill
                 className="object-cover"

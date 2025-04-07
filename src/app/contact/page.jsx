@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { Partners } from "@/components/sections/Partners"
 import Image from "next/image"
+import Link from "next/link"
 import { useState } from "react"
 
 const impactImages = [
@@ -166,7 +167,7 @@ export default function ContactPage() {
             <video
               className="w-full aspect-video"
               controls
-              poster="/images/IMG_6388.jpg"
+              preload="metadata"
             >
               <source src="/images/Dance Class-1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -201,13 +202,15 @@ export default function ContactPage() {
                 </p>
               </div>
             </div>
-            <Button 
-              variant="outline"
-              className="bg-white text-[#1a237e] hover:bg-gray-100 px-8 py-3 hover:text-[#1a237e]"
-              onClick={() => document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })}
-            >
-              Get Involved Today
-            </Button>
+            <Link href="#"> {/* TODO: Add donate link */}
+              <Button 
+                variant="outline"
+                className="bg-white text-[#1a237e] hover:bg-gray-100 px-8 py-3 hover:text-[#1a237e]"
+               
+              >
+                Donate Now
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

@@ -4,7 +4,7 @@ const partnerLogos = [
   {
     src: '/images/PARTNER KEG GROUP.jpg',
     alt: 'KEG GROUP',
-    href: '#'
+    href: 'https://www.keggroup.org/'
   },
   {
     src: '/images/PARTNER GATE OF HEAVEN.png',

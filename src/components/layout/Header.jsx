@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
@@ -101,18 +100,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Additional Bottom Navigation using navItems */}
-      <nav className="flex gap-6 text-sm font-medium justify-center mt-4">
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="hover:text-[#1a237e]"
-          >
-            {item.label}
-          </Link>
-        ))}
-      </nav>
     </header>
   );
 }

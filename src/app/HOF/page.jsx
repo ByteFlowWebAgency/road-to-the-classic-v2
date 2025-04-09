@@ -1,19 +1,71 @@
 "use client";
 import { Heading1, Section } from '@/components/ui';
 import Image from 'next/image'; 
-import { 
-    Button, 
+import {
+    // Button, // Removed
     Typography, 
     Heading2,  
     Card, 
-    CardHeader, 
-    CardTitle, 
-    CardDescription, 
-    CardContent,  
+    // CardHeader, // Removed
+    // CardTitle, // Removed
+    // CardDescription, // Removed
+    // CardContent, // Removed - Content placed directly in Card
   } from '@/components/ui';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react'; // Combined imports
+import { Calendar, Clock, MapPin, User } from 'lucide-react'; // Changed to use lucide-react icons
 import './BCHOFstyle.css';
+
+
+const eventsData = [
+    {
+        id: 1,
+        date: "Thu, June 19, 2025",
+        title: "Road To The Classic Black College Football Hall Of Fame HBCU Youth Entrepreneur Expo",
+        time: "12:00 PM - 6:00 PM",
+        location: "Crenshaw Park",
+        host: "Future Promise",
+    },
+    {
+        id: 2,
+        date: "August 12-14, 2025 (Tues-Thurs)",
+        title: "Road To The Classic Black College Football Hall of Fame HBCU Cheer & Dance Competition",
+        time: "9:00 AM - 3:00 PM (Aug 12-13), 9:00 AM - 12:00 PM (Aug 14)",
+        location: 'Edward &quot;Peel&quot; Coleman',
+        host: "Road To The Classic Inc.",
+    },
+    {
+        id: 3,
+        date: "August 15-17, 2025 (Fri-Sun)",
+        title: "Road To The Classic Black College Football Hall of Fame HBCU Youth Football Tournament",
+        time: "Friday Registration, Saturday 8:00 AM - 8:00 PM, Sunday 8:00 AM - 2:00 PM",
+        location: "Hall of Fame Football Fields",
+        host: "L.A.V.A. Athletics",
+    },
+    {
+        id: 4,
+        date: "Sat, August 16, 2025",
+        title: "Road To The Classic Black College Football Hall Of Fame HBCU Hoop for Coop Youth...",
+        time: "11:00 AM - 2:00 PM",
+        location: "Hartford Middle School/ Hartford New Facility",
+        host: "Guys &amp; Gals Community Partnership Inc.",
+    },
+    {
+        id: 5,
+        date: "Fri, August 22, 2025",
+        title: "Road To The Classic Black College Football Hall Of Fame HBCU Spelling Bee",
+        time: "6:00 PM - 8:00 PM (TBA)",
+        location: "Hall of Fame Room",
+        host: "L.A.V.A. Athletics/Crouse CLC",
+    },
+    {
+        id: 6,
+        date: "Sat, August 23, 2025",
+        title: "Road To The Classic Black College Football Hall Of Fame HBCU STEAM Fair and Live...",
+        time: "10:00 AM - 3:00 PM",
+        location: "Cultural Center (Great Court)",
+        host: "United Family Community and STEAM Hartford Middle School",
+    },
+];
 
 
 export default function HallOfFamePage(){
@@ -69,121 +121,68 @@ export default function HallOfFamePage(){
                     >
 
                         <div className="fullscreen-content">
-                        <Heading1 className="absolute z-10 text-white text-5xl font-bold heading-animation">
-                    Black College Football Hall of Fame</Heading1>
+                        <Heading1 className="text-white text-5xl font-bold text-center">
+                            Black College Football Hall of Fame
+                        </Heading1>
                         </div>
             </Section>
 
-            <Section background="white" className="py-12 px-6">
-            <Heading2 color="primary" className="text-3xl font-bold text-center mb-6">
-                        Black College Football Hall Of Fame</Heading2>
-                <div className="flex justify-between items-center">
-                    <div className="w-32">
+            <Section background="white" className="py-12">
+                <Heading2 color="primary" className="text-3xl font-bold text-center mb-8">
+                    Black College Football Hall Of Fame
+                </Heading2>
+                <div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-16 gap-6 items-center">
+                    <div className="flex justify-center md:justify-start">
                         <Image
-                        src="/images/hallOfFameLogo.jpg"
-                        alt="Hall of Fame logo"
-                        width={200}
-                        height={200}
+                            src="/images/hallOfFameLogo.jpg"
+                            alt="Hall of Fame logo"
+                            width={200}
+                            height={200}
                         />
                     </div>
-                    <div className="mt-6 text-black flex justify-end">
-                        <div className="max-w-2xl text-right">
-                            <Typography variant="subtle">
+                    <div>
+                        <Typography variant="subtle">
                             We cherish our collaborative partnership with the Black College Football Hall of Fame. This is our 
-                            opportunity to use the “HBCU Classic” in Canton, Ohio as a launching pad for our future leaders. This 
+                            opportunity to use the "HBCU Classic" in Canton, Ohio as a launching pad for our future leaders. This 
                             event is a celebration for all of our youth participants to come together and highlight all of their 
                             achievements throughout the year in the areas of entrepreneurship, engineering, science, innovation, 
                             academic excellence, journalism, media, performing arts, and athletics. This partnership gives us the 
-                            opportunity to fill the stadium with young future “Hall of Famers” from all over the state and abroad.
-                            </Typography>
-                        </div>
+                            opportunity to fill the stadium with young future "Hall of Famers" from all over the state and abroad.
+                        </Typography>
                     </div>
                 </div>
             </Section>
 
             {/*upcoming events section */}
             <Section background="primary" className="py-12">
-                <Heading2 color="primary-foreground" className="text-center mb-8">Upcomig Events</Heading2>
+                <Heading2 color="primary-foreground" className="text-center mb-8">Upcoming Events</Heading2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap -8 px-4 md:px-16">
-                    {/**Event cards */}
-                <Card className="bg-primary shadow-xl">
-                    <CardHeader>
-                        <CardTitle className="text-lg font-bold text-primary-foreground">Youth Entrepreneur Expo</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <CardDescription>
-                            <Typography variant="subtle" className="text-primary-foreground">June 19, 2025 | 12PM to 6PM</Typography>
-                            <Typography variant="subtle" className="mt-2 text-primary-foreground">Location: Crenshaw Park</Typography>
-                            <Typography variant="subtle" className="mt-2 text-primary-foreground">Hosted By: Road To The Classic</Typography>
-                        </CardDescription>
-                    </CardContent>
-                </Card>
-                {/**cards 2*/}
-                <Card className="bg-primary shadow-xl">
-                    <CardHeader>
-                        <CardTitle className="text-lg font-bold text-primary-foreground">Road To The Classic: Black College Football Hall of Fame HBCU - WE ALL IN Cheer &Dance Camp</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <CardDescription>
-                            <Typography variant="subtle" className="text-primary-foreground">August 12, 2025 | 9AM to 3PM</Typography>
-                            <Typography variant="subtle" className="mt-2 mt-2 text-primary-foreground">Location: Edward "Peel" Coleman</Typography>
-                            <Typography variant="subtle" className="mt-2 text-primary-foreground">Hosted By: Road To The Classic</Typography>
-                        </CardDescription>
-                    </CardContent>
-                </Card>
-                {/**cards 3*/}
-                <Card className="bg-primary shadow-xl">
-                    <CardHeader>
-                        <CardTitle className="text-lg font-bold text-primary-foreground">Road To The Classic: Black College Football Hall of Fame HBCU - WE ALL IN Cheer &Dance Camp (Day 2)</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <CardDescription>
-                            <Typography variant="subtle" className="text-primary-foreground">August 13, 2025 | 9AM to 3PM</Typography>
-                            <Typography variant="subtle" className="mt-2 mt-2 text-primary-foreground">Location: Edward "Peel" Coleman</Typography>
-                            <Typography variant="subtle" className="mt-2 text-primary-foreground">Hosted By: Road To The Classic</Typography>
-                        </CardDescription>
-                    </CardContent>
-                </Card>
-                {/**cards 4*/}
-                <Card className="bg-primary shadow-xl">
-                    <CardHeader>
-                        <CardTitle className="text-lg font-bold text-primary-foreground">Road To The Classic: Black College Football Hall of Fame HBCU - WE ALL IN Cheer &Dance Camp (Day 3)</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <CardDescription>
-                            <Typography variant="subtle" className="text-primary-foreground">August 14, 2025 | 9AM to 12PM</Typography>
-                            <Typography variant="subtle" className="mt-2 mt-2 text-primary-foreground">Location: Edward "Peel" Coleman</Typography>
-                            <Typography variant="subtle" className="mt-2 text-primary-foreground">Hosted By: Road To The Classic</Typography>
-                        </CardDescription>
-                    </CardContent>
-                </Card>
-                {/**cards 5*/}
-                <Card className="bg-primary shadow-xl">
-                    <CardHeader>
-                        <CardTitle className="text-lg font-bold text-primary-foreground">Youth Football Tournament</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <CardDescription>
-                            <Typography variant="subtle" className="text-primary-foreground">August 15, 2025 | 8AM to 8PM</Typography>
-                            <Typography variant="subtle" className="mt-2 mt-2 text-primary-foreground">Hall of Fame Football Fields</Typography>
-                            <Typography variant="subtle" className="mt-2 text-primary-foreground">Hosted By: Road To The Classic</Typography>
-                        </CardDescription>
-                    </CardContent>
-                </Card>
-                {/**cards 6*/}
-                <Card className="bg-primary shadow-xl">
-                    <CardHeader>
-                        <CardTitle className="text-lg font-bold text-primary-foreground">Hoop for Coop: Youth Health Fair & Sports Clinic</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <CardDescription>
-                            <Typography variant="subtle" className="text-primary-foreground">August 16, 2025 | 11AM to 2PM</Typography>
-                            <Typography variant="subtle" className="mt-2 mt-2 text-primary-foreground">Hartford Middle School</Typography>
-                            <Typography variant="subtle" className="mt-2 text-primary-foreground">Hosted By: Road To The Classic</Typography>
-                        </CardDescription>
-                    </CardContent>
-                </Card>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-16">
+                    {eventsData.map((event) => (
+                         <Card key={event.id} className="bg-[#1A237E] shadow-lg rounded-lg p-6 text-primary-foreground flex flex-col">
+                            <div className="flex items-center mb-2 text-sm">
+                                <Calendar className="mr-2 flex-shrink-0 h-4 w-4" />
+                                <span className="font-semibold">{event.date}</span>
+                            </div>
+                            <Typography as="h3" variant="h6" className="font-bold mb-4 leading-tight flex-grow">
+                                {event.title}
+                            </Typography>
+                            <div className="space-y-2 text-sm mt-auto">
+                                <div className="flex items-start">
+                                    <Clock className="mr-2 mt-1 flex-shrink-0 text-gray-400 h-4 w-4" />
+                                    <span>{event.time}</span>
+                                </div>
+                                <div className="flex items-start">
+                                    <MapPin className="mr-2 mt-1 flex-shrink-0 text-gray-400 h-4 w-4" />
+                                     <span dangerouslySetInnerHTML={{ __html: event.location }} />
+                                </div>
+                                <div className="flex items-start">
+                                    <User className="mr-2 mt-1 flex-shrink-0 text-gray-400 h-4 w-4" />
+                                     <span>Host: <span dangerouslySetInnerHTML={{ __html: event.host }} /></span>
+                                </div>
+                            </div>
+                        </Card>
+                    ))}
                 </div>
             </Section>
         </div>

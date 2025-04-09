@@ -1,0 +1,190 @@
+"use client";
+import { Heading1, Section } from '@/components/ui';
+import Image from 'next/image'; 
+import {
+    // Button, // Removed
+    Typography, 
+    Heading2,  
+    Card, 
+    // CardHeader, // Removed
+    // CardTitle, // Removed
+    // CardDescription, // Removed
+    // CardContent, // Removed - Content placed directly in Card
+  } from '@/components/ui';
+import { useState, useEffect } from 'react'; // Combined imports
+import { Calendar, Clock, MapPin, User } from 'lucide-react'; // Changed to use lucide-react icons
+import './BCHOFstyle.css';
+
+
+const eventsData = [
+    {
+        id: 1,
+        date: "Thu, June 19, 2025",
+        title: "Road To The Classic Black College Football Hall Of Fame HBCU Youth Entrepreneur Expo",
+        time: "12:00 PM - 6:00 PM",
+        location: "Crenshaw Park",
+        host: "Future Promise",
+    },
+    {
+        id: 2,
+        date: "August 12-14, 2025 (Tues-Thurs)",
+        title: "Road To The Classic Black College Football Hall of Fame HBCU Cheer & Dance Competition",
+        time: "9:00 AM - 3:00 PM (Aug 12-13), 9:00 AM - 12:00 PM (Aug 14)",
+        location: 'Edward &quot;Peel&quot; Coleman',
+        host: "Road To The Classic Inc.",
+    },
+    {
+        id: 3,
+        date: "August 15-17, 2025 (Fri-Sun)",
+        title: "Road To The Classic Black College Football Hall of Fame HBCU Youth Football Tournament",
+        time: "Friday Registration, Saturday 8:00 AM - 8:00 PM, Sunday 8:00 AM - 2:00 PM",
+        location: "Hall of Fame Football Fields",
+        host: "L.A.V.A. Athletics",
+    },
+    {
+        id: 4,
+        date: "Sat, August 16, 2025",
+        title: "Road To The Classic Black College Football Hall Of Fame HBCU Hoop for Coop Youth...",
+        time: "11:00 AM - 2:00 PM",
+        location: "Hartford Middle School/ Hartford New Facility",
+        host: "Guys &amp; Gals Community Partnership Inc.",
+    },
+    {
+        id: 5,
+        date: "Fri, August 22, 2025",
+        title: "Road To The Classic Black College Football Hall Of Fame HBCU Spelling Bee",
+        time: "6:00 PM - 8:00 PM (TBA)",
+        location: "Hall of Fame Room",
+        host: "L.A.V.A. Athletics/Crouse CLC",
+    },
+    {
+        id: 6,
+        date: "Sat, August 23, 2025",
+        title: "Road To The Classic Black College Football Hall Of Fame HBCU STEAM Fair and Live...",
+        time: "10:00 AM - 3:00 PM",
+        location: "Cultural Center (Great Court)",
+        host: "United Family Community and STEAM Hartford Middle School",
+    },
+];
+
+
+export default function HallOfFamePage(){
+    const images = [
+        "/images/75044160007-black-college-football-hof-classic-55.webp",
+        "/images/75044158007-black-college-football-hof-classic-65.webp",
+        "/images/75044164007-black-college-football-hof-classic-57.webp",
+        "/images/75044162007-black-college-football-hof-classic-61.webp",
+        "/images/75044157007-black-college-football-hof-classic-63.webp",
+        "/images/75044155007-black-college-football-hof-classic-59.webp",
+        "/images/75044154007-black-college-football-hof-classic-62.webp",
+    ]
+
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [windowDimensions, setWindowDimensions] = useState({
+        width: 0,
+        height: 0,
+    })
+
+    useEffect(() => {
+        // Set initial window dimensions
+        setWindowDimensions({
+            width: window.innerWidth,
+            height: window.innerHeight,
+        });
+
+        const handleResize = () => {
+            setWindowDimensions({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+
+    //using useEffect to handle automatic immage switch every few seconds
+    useEffect(()=>{
+        const intervalId = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 3000); // images changes every 3 seconds
+
+        return () => clearInterval(intervalId); //clear up inyerval on unmount
+    }, [images.length]);
+
+    return (
+        <div>
+            <Section className="fullscreen-section"
+                    style={{ backgroundImage: `url(${images[currentIndex]})`}}
+                    >
+
+                        <div className="fullscreen-content">
+                        <Heading1 className="text-white text-5xl font-bold text-center">
+                            Black College Football Hall of Fame
+                        </Heading1>
+                        </div>
+            </Section>
+
+            <Section background="white" className="py-12">
+                <Heading2 color="primary" className="text-3xl font-bold text-center mb-8">
+                    Black College Football Hall Of Fame
+                </Heading2>
+                <div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-16 gap-6 items-center">
+                    <div className="flex justify-center md:justify-start">
+                        <Image
+                            src="/images/hallOfFameLogo.jpg"
+                            alt="Hall of Fame logo"
+                            width={200}
+                            height={200}
+                        />
+                    </div>
+                    <div>
+                        <Typography variant="subtle">
+                            We cherish our collaborative partnership with the Black College Football Hall of Fame. This is our 
+                            opportunity to use the "HBCU Classic" in Canton, Ohio as a launching pad for our future leaders. This 
+                            event is a celebration for all of our youth participants to come together and highlight all of their 
+                            achievements throughout the year in the areas of entrepreneurship, engineering, science, innovation, 
+                            academic excellence, journalism, media, performing arts, and athletics. This partnership gives us the 
+                            opportunity to fill the stadium with young future "Hall of Famers" from all over the state and abroad.
+                        </Typography>
+                    </div>
+                </div>
+            </Section>
+
+            {/*upcoming events section */}
+            <Section background="primary" className="py-12">
+                <Heading2 color="primary-foreground" className="text-center mb-8">Upcoming Events</Heading2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-16">
+                    {eventsData.map((event) => (
+                         <Card key={event.id} className="bg-[#1A237E] shadow-lg rounded-lg p-6 text-primary-foreground flex flex-col">
+                            <div className="flex items-center mb-2 text-sm">
+                                <Calendar className="mr-2 flex-shrink-0 h-4 w-4" />
+                                <span className="font-semibold">{event.date}</span>
+                            </div>
+                            <Typography as="h3" variant="h6" className="font-bold mb-4 leading-tight flex-grow">
+                                {event.title}
+                            </Typography>
+                            <div className="space-y-2 text-sm mt-auto">
+                                <div className="flex items-start">
+                                    <Clock className="mr-2 mt-1 flex-shrink-0 text-gray-400 h-4 w-4" />
+                                    <span>{event.time}</span>
+                                </div>
+                                <div className="flex items-start">
+                                    <MapPin className="mr-2 mt-1 flex-shrink-0 text-gray-400 h-4 w-4" />
+                                     <span dangerouslySetInnerHTML={{ __html: event.location }} />
+                                </div>
+                                <div className="flex items-start">
+                                    <User className="mr-2 mt-1 flex-shrink-0 text-gray-400 h-4 w-4" />
+                                     <span>Host: <span dangerouslySetInnerHTML={{ __html: event.host }} /></span>
+                                </div>
+                            </div>
+                        </Card>
+                    ))}
+                </div>
+            </Section>
+        </div>
+    );
+}

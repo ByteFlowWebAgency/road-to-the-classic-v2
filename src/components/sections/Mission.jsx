@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-
+import Link from 'next/link';
 export function Mission() {
   return (
     <section className="py-16 bg-[#1a237e] text-white">
@@ -26,8 +26,12 @@ export function Mission() {
               arts, business, and literature.
             </p>
             <div className="flex gap-4">
-              <Button variant="primary" className="bg-white text-[#1a237e] hover:bg-gray-100 hover:text-[#1a237e]">About Us</Button>
-              <Button variant="secondary" className="text-white hover:bg-[#1a237e] hover:text-white border-white">Get Involved</Button>
+              <Link href="/about">
+                <Button variant="primary" className="bg-white text-[#1a237e] hover:bg-gray-100 hover:text-[#1a237e]">About Us</Button>
+              </Link>
+              <Link href="/contact">
+                <Button variant="secondary" className="text-white hover:bg-[#1a237e] hover:text-white border-white">Get Involved</Button>
+              </Link>
             </div>
           </div>
         </div>

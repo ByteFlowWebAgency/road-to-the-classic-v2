@@ -148,20 +148,8 @@ export function Contact() {
               Send Message
             </Button>
           </form>
-
         </div>
       </div>
-
-      {/* Map Section */}
-      <div className="container mx-auto px-6 mt-16">
-        <div className="w-full h-[400px] bg-gray-200 rounded-lg">
-          {/* Add your map integration here */}
-          <div className="w-full h-full flex items-center justify-center text-gray-500">
-            Map Integration
-          </div>
-        </div>
-      </div>
-
     </section>
   )
 } 

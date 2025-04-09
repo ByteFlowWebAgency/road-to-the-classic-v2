@@ -8,7 +8,7 @@ export function SocialBar() {
         <Link href="#" aria-label="Facebook">
           <Facebook className="h-5 w-5" />
         </Link>
-        <Link href="#" aria-label="Instagram">
+        <Link href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram">
           <Instagram className="h-5 w-5" />
         </Link>
         <Link href="#" aria-label="LinkedIn">

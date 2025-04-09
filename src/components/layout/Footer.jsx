@@ -29,7 +29,7 @@ export function Footer() {
             <Button className="bg-[#1a237e] hover:bg-[#0d1757] w-full mb-4">Donate</Button>
             <h4 className="font-medium mb-2">Follow Us on Our Socials</h4>
             <div className="flex gap-4">
-              <Link href="#" aria-label="Instagram" className="text-[#1a237e]">
+              <Link href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" className="text-[#1a237e]">
                 <Instagram className="h-6 w-6" />
               </Link>
               <Link href="#" aria-label="LinkedIn" className="text-[#1a237e]">

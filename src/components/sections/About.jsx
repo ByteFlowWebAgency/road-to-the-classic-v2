@@ -218,7 +218,45 @@ export function About() {
         </div>
       </div>
 
- 
+      {/* Partner Logos Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-[#1a237e] mb-8">Our Partners</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Collaborating with leading organizations to create meaningful impact in our communities
+            and empower the next generation of leaders.
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+            {[
+              { src: "/images/partner1.webp", alt: "Partner 1" },
+              { src: "/images/partner2.jpeg", alt: "Partner 2" },
+              { src: "/images/partner3.jpg", alt: "Partner 3" },
+              { src: "/images/partner4.jpg", alt: "Partner 4" },
+              { src: "/images/partner5.PNG", alt: "Partner 5" },
+              { src: "/images/partner6.PNG", alt: "Partner 6" },
+              { src: "/images/partner7.png", alt: "Partner 7" },
+              { src: "/images/PARTNER BY DIVINE VISION.png", alt: "Partner Divine Vision" },
+              { src: "/images/PARTNER GATE OF HEAVEN.png", alt: "Partner Gate of Heaven" },
+              { src: "/images/PARTNER KEG GROUP.jpg", alt: "Partner KEG Group" },
+            ].map((partner, index) => (
+              <div 
+                key={index}
+                className="relative w-full aspect-[3/2] max-w-[200px] transition-transform hover:scale-105"
+              >
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  fill
+                  className="object-contain filter hover:brightness-110 transition-all duration-300"
+                  sizes="(max-width: 768px) 40vw, (max-width: 1200px) 25vw, 20vw"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Become A Sponsor Section */}
       <section className="relative bg-[#1a237e] py-16  mt-10 flex items-center justify-center text-white">
 

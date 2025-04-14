@@ -10,23 +10,22 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4 border-b pb-2">About Us</h3>
             <ul className="space-y-2">
-              <li><Link href="/who-we-are" className="text-gray-600 hover:text-[#1a237e]">Who We Are</Link></li>
-              <li><Link href="/get-involved" className="text-gray-600 hover:text-[#1a237e]">Get Involved</Link></li>
-              <li><Link href="/partnerships" className="text-gray-600 hover:text-[#1a237e]">Partnerships</Link></li>
+              <li><Link href="/about" className="text-gray-600 hover:text-[#1a237e]">Who We Are</Link></li>
+              <li><Link href="/contact" className="text-gray-600 hover:text-[#1a237e]">Get Involved</Link></li>
+              <li><Link href="/partners" className="text-gray-600 hover:text-[#1a237e]">Partners and Sponsors</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="font-bold text-lg mb-4 border-b pb-2">Programs</h3>
+            <h3 className="font-bold text-lg mb-4 border-b pb-2">Events</h3>
             <ul className="space-y-2">
-              <li><Link href="/youth-events" className="text-gray-600 hover:text-[#1a237e]">Youth Events</Link></li>
-              <li><Link href="/college-football" className="text-gray-600 hover:text-[#1a237e]">Black College Football</Link></li>
-              <li><Link href="/hall-of-fame" className="text-gray-600 hover:text-[#1a237e]">Hall of Fame Events</Link></li>
+              <li><Link href="/rttc-events" className="text-gray-600 hover:text-[#1a237e]">Road To The Classic Events</Link></li>
+              <li><Link href="/bcfhof-events" className="text-gray-600 hover:text-[#1a237e]">Black College Football Hall of Fame Events</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-bold text-lg mb-4 border-b pb-2">Learn More</h3>
             <p className="text-gray-600 mb-4">Discover how you can support our mission today.</p>
-            <Button className="bg-[#1a237e] hover:bg-[#0d1757] w-full mb-4">Donate</Button>
+            <Button className="bg-[#1a237e] hover:bg-[#0d1757] w-full mb-4">Give Now</Button>
             <h4 className="font-medium mb-2">Follow Us on Our Socials</h4>
             <div className="flex gap-4">
               <Link href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" className="text-[#1a237e]">
@@ -35,9 +34,7 @@ export function Footer() {
               <Link href="#" aria-label="LinkedIn" className="text-[#1a237e]">
                 <Linkedin className="h-6 w-6" />
               </Link>
-              <Link href="#" aria-label="Twitter" className="text-[#1a237e]">
-                <Twitter className="h-6 w-6" />
-              </Link>
+              
             </div>
           </div>
         </div>

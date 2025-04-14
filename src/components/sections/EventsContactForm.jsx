@@ -101,7 +101,7 @@ export function EventsContactForm() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                     Phone Number
@@ -114,28 +114,6 @@ export function EventsContactForm() {
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
-                </div>
-                
-                <div>
-                  <label htmlFor="eventInterest" className="block text-sm font-medium text-gray-700 mb-1">
-                    Event of Interest
-                  </label>
-                  <select
-                    id="eventInterest"
-                    name="eventInterest"
-                    value={formData.eventInterest}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  >
-                    <option value="">Select an event</option>
-                    <option value="Youth Entrepreneur Expo">Youth Entrepreneur Expo</option>
-                    <option value="Cheer & Dance Competition">Cheer & Dance Competition</option>
-                    <option value="Youth Football Tournament">Youth Football Tournament</option>
-                    <option value="STEAM Fair">STEAM Fair</option>
-                    <option value="Spelling Bee">Spelling Bee</option>
-                    <option value="Other">Other (please specify)</option>
-                  </select>
                 </div>
               </div>
               

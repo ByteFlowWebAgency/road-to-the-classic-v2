@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button";
+import Link from 'next/link'
 
 const corePrinciplesItems = [
   {
@@ -15,10 +16,6 @@ const corePrinciplesItems = [
     description: 'Build stronger communities across discipline and entrepreneurship.',
   },
   {
-    title: 'Cooperative Economics',
-    description: 'Develop financial literacy and business skills for future success.',
-  },
-  {
     title: 'Purpose',
     description: 'Guide youth to discover their unique talents and contributions.',
   },
@@ -30,10 +27,7 @@ const corePrinciplesItems = [
     title: 'Faith',
     description: 'Encourage self-actualization and belief in one\'s potential.',
   },
-  {
-    title: 'Prevention Measures',
-    description: 'Provide positive alternatives to decrease violence and unhealthy behaviors.',
-  },
+
 ];
 
 
@@ -160,8 +154,8 @@ export function About() {
       </div>
 
       {/* Our Core Principles Section */}
-      <section className="relative bg-[#1a237e] py-10">
-        <div className="container mx-auto px-4 pb-32">
+      <section className="relative bg-[#1a237e] py-16">
+        <div className="container mx-auto px-4 pb-16">
           <h2 className="text-3xl font-bold text-white text-center mb-12">Our Core Principles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {corePrinciplesItems.map((event, index) => (
@@ -193,10 +187,11 @@ export function About() {
               </p>
             </div>
 
-            <div className="flex gap-4">
-              <Button className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4" variant="primary">Get Involved</Button>
+            <div>
+              <Link href="/contact">
 
-              <Button className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4" variant="outline">Learn More</Button>
+              <Button className="w-full sm:w-1/4 px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 " variant="primary">Get Involved</Button>
+              </Link>
             </div>
 
            

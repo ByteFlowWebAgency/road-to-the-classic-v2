@@ -83,22 +83,6 @@ export default function ContactPage() {
             through education, mentorship, and youth development programs.
           </p>
 
-          {/* Impact Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <h3 className="text-4xl font-bold text-[#1a237e] mb-2">5,000+</h3>
-              <p className="text-gray-600">Students Impacted</p>
-            </div>
-            <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <h3 className="text-4xl font-bold text-[#1a237e] mb-2">100%</h3>
-              <p className="text-gray-600">Funds to Programs</p>
-            </div>
-            <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <h3 className="text-4xl font-bold text-[#1a237e] mb-2">20+</h3>
-              <p className="text-gray-600">Community Partners</p>
-            </div>
-          </div>
-
           {/* Featured Impact Carousel */}
           <div className="mb-16">
             <div className="relative aspect-[16/9] rounded-xl overflow-hidden">

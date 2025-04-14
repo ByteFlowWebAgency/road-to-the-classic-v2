@@ -5,7 +5,7 @@ export default function PartnersPage() {
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="text-center bg-[#1a237e] p-6">        
-        <h1 className="text-3xl font-bold text-center text-white mb-6">Our Partners</h1>
+        <h1 className="text-3xl font-bold text-center text-white mb-6">Our Partners & Sponsors</h1>
         <p className="text-white text-center mb-6 leading-relaxed">
           We are grateful to our partners who make our mission possible. Their support enables us to create lasting impact in our community.
         </p>

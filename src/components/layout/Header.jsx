@@ -7,9 +7,9 @@ import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'ABOUT', href: '/about' },
-  { label: 'IMPACT', href: '/impact' },
+  { label: 'CONTACT', href: '/contact' },
   { label: 'EVENTS', href: '/events' },
-  { label: 'CONTACT US', href: '/contact' },
+  { label: 'PARTNERS & SPONSORS', href: '/partners' },
 ];
 
 export function Header() {

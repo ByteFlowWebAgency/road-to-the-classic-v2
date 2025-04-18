@@ -25,7 +25,13 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4 border-b pb-2">Learn More</h3>
             <p className="text-gray-600 mb-4">Discover how you can support our mission today.</p>
-            <Button className="bg-[#1a237e] hover:bg-[#0d1757] w-full mb-4">Give Now</Button>
+            <Link 
+              href="https://www.zeffy.com/donation-form/donate-to-make-a-difference-13874"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-[#1a237e] hover:bg-[#0d1757] w-full mb-4">Give Now</Button>
+            </Link>
             <h4 className="font-medium mb-2">Follow Us on Our Socials</h4>
             <div className="flex gap-4">
               <Link href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" className="text-[#1a237e]">

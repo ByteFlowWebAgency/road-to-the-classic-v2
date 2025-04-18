@@ -35,16 +35,6 @@ export function About() {
   return (
     <section className="pt-0 py-16 bg-white">
 
-      {/* About Us Section */}
-      <div className="text-center bg-[#1a237e]  p-6 m-0">        
-        <h2 className="text-3xl font-bold text-center text-white mb-6">ABOUT US</h2>
-        <p className="text-white text-center mb-6 leading-relaxed">
-            Learn about our mission, vision, and the core principles that 
-            drive our work to empower youth through education and HBCU awareness.
-        </p>
-
-      </div> 
-
       {/* Our Mission & Our Vision Section*/}
       <div className="container mx-auto px-6 mt-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -129,24 +119,7 @@ export function About() {
 
           </div>
 
-          {/* Video Section */}
-          <div className="mt-16 text-center">
-            <h2 className="text-3xl font-bold mb-6 text-[#1a237e]">Experience Our Programs</h2>
-            <p className="text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Watch our students engage in interactive learning experiences that combine education with fun. 
-              These activities are designed to foster critical thinking, teamwork, and creativity.
-            </p>
-            <div className="aspect-video relative rounded-lg overflow-hidden max-w-4xl mx-auto">
-              <video
-                src="/images/Playing a bord game-1.mp4"
-                controls
-                className="w-full h-full object-cover"
-                preload="metadata"
-              >
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
+          
 
       </div>
 

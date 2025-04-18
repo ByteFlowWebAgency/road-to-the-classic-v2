@@ -1,18 +1,12 @@
 "use client";
+import { useState, useEffect } from 'react'; // Combined imports
 import { Heading1, Section } from '@/components/ui';
 import Image from 'next/image'; 
 import {
-    // Button, // Removed
     Typography, 
     Heading2,  
-    Card, 
-    // CardHeader, // Removed
-    // CardTitle, // Removed
-    // CardDescription, // Removed
-    // CardContent, // Removed - Content placed directly in Card
   } from '@/components/ui';
-import { useState, useEffect } from 'react'; // Combined imports
-import { Calendar, Clock, MapPin, User } from 'lucide-react'; // Changed to use lucide-react icons
+  import { UpcomingEvents } from '@/components/sections/UpcomingEvents';
 import './BCHOFstyle.css';
 
 
@@ -119,16 +113,15 @@ export default function HallOfFamePage(){
             <Section className="fullscreen-section"
                     style={{ backgroundImage: `url(${images[currentIndex]})`}}
                     >
-
-                        <div className="fullscreen-content">
-                        <Heading1 className="text-white text-5xl font-bold text-center">
-                            Black College Football Hall of Fame
-                        </Heading1>
-                        </div>
+                <div className="fullscreen-content">
+                    <Heading1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center">
+                        Black College Football Hall of Fame
+                    </Heading1>
+                </div>
             </Section>
 
             <Section background="white" className="py-12">
-                <Heading2 color="primary" className="text-3xl font-bold text-center mb-8">
+                <Heading2 color="primary" className="text-4xl font-bold text-center mb-8">
                     Black College Football Hall Of Fame
                 </Heading2>
                 <div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-16 gap-6 items-center">
@@ -136,12 +129,13 @@ export default function HallOfFamePage(){
                         <Image
                             src="/images/hallOfFameLogo.jpg"
                             alt="Hall of Fame logo"
-                            width={200}
-                            height={200}
+                            width={300}
+                            height={300}
+                            className="object-contain w-full"
                         />
                     </div>
                     <div>
-                        <Typography variant="subtle">
+                        <Typography variant="subtle" className="text-lg leading-relaxed text-center">
                             We cherish our collaborative partnership with the Black College Football Hall of Fame. This is our 
                             opportunity to use the "HBCU Classic" in Canton, Ohio as a launching pad for our future leaders. This 
                             event is a celebration for all of our youth participants to come together and highlight all of their 
@@ -153,38 +147,14 @@ export default function HallOfFamePage(){
                 </div>
             </Section>
 
-            {/*upcoming events section */}
-            <Section background="primary" className="py-12">
-                <Heading2 color="primary-foreground" className="text-center mb-8">Upcoming Events</Heading2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-16">
-                    {eventsData.map((event) => (
-                         <Card key={event.id} className="bg-[#1A237E] shadow-lg rounded-lg p-6 text-primary-foreground flex flex-col">
-                            <div className="flex items-center mb-2 text-sm">
-                                <Calendar className="mr-2 flex-shrink-0 h-4 w-4" />
-                                <span className="font-semibold">{event.date}</span>
-                            </div>
-                            <Typography as="h3" variant="h6" className="font-bold mb-4 leading-tight flex-grow">
-                                {event.title}
-                            </Typography>
-                            <div className="space-y-2 text-sm mt-auto">
-                                <div className="flex items-start">
-                                    <Clock className="mr-2 mt-1 flex-shrink-0 text-gray-400 h-4 w-4" />
-                                    <span>{event.time}</span>
-                                </div>
-                                <div className="flex items-start">
-                                    <MapPin className="mr-2 mt-1 flex-shrink-0 text-gray-400 h-4 w-4" />
-                                     <span dangerouslySetInnerHTML={{ __html: event.location }} />
-                                </div>
-                                <div className="flex items-start">
-                                    <User className="mr-2 mt-1 flex-shrink-0 text-gray-400 h-4 w-4" />
-                                     <span>Host: <span dangerouslySetInnerHTML={{ __html: event.host }} /></span>
-                                </div>
-                            </div>
-                        </Card>
-                    ))}
-                </div>
-            </Section>
+            <UpcomingEvents 
+                customEvents={eventsData}
+                background="[#1a237e]"
+                titleColor="white"
+                description={null}
+                showViewAll={false}
+                limit={6}
+            />
         </div>
     );
 }

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import { Facebook, Instagram } from "lucide-react"
 
 export function SocialBar() {
   return (
@@ -11,14 +11,13 @@ export function SocialBar() {
         <Link href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram">
           <Instagram className="h-5 w-5" />
         </Link>
-        <Link href="#" aria-label="LinkedIn">
-          <Linkedin className="h-5 w-5" />
-        </Link>
-        <Link href="#" aria-label="Twitter">
-          <Twitter className="h-5 w-5" />
-        </Link>
       </div>
-      <Link href="/donate" className="bg-white text-[#1a237e] px-4 py-1 rounded text-sm font-medium">
+      <Link 
+        href="https://www.zeffy.com/donation-form/donate-to-make-a-difference-13874"
+        target="_blank"
+        rel="noopener noreferrer" 
+        className="bg-white text-[#1a237e] px-4 py-1 rounded text-sm font-medium"
+      >
         GIVE NOW
       </Link>
     </div>

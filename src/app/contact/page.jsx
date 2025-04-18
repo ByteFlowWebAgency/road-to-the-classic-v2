@@ -87,6 +87,7 @@ export default function ContactPage() {
     resolver: zodResolver(formSchema),
   });
   const { Toast, showToast } = useToast();
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   // Initialize EmailJS
   useEffect(() => {
@@ -97,6 +98,17 @@ export default function ContactPage() {
       console.error("EmailJS public key is missing");
     }
   }, []);
+
+  // Reset form visibility after submission
+  useEffect(() => {
+    let timer;
+    if (formSubmitted) {
+      timer = setTimeout(() => {
+        setFormSubmitted(false);
+      }, 5000); // Reset after 5 seconds
+    }
+    return () => clearTimeout(timer);
+  }, [formSubmitted]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % impactImages.length);
@@ -132,12 +144,13 @@ export default function ContactPage() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
 
-      showToast("Your message has been sent successfully!", "success");
+      showToast("Thank you for your message! We've received your inquiry and will contact you shortly.", "success");
+      setFormSubmitted(true);
       reset();
     } catch (error) { 
       console.error("Error sending message:", error);
       console.error("Error details:", JSON.stringify(error, Object.getOwnPropertyNames(error)));
-      showToast("Failed to send message. Please try again.", "error");
+      showToast("Failed to send message. Please try again or contact us directly by phone.", "error");
     }
   };
 
@@ -379,7 +392,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Email Address</h3>
-                  <p className="text-gray-600">mbentley@roadtoclassic.org</p>
+                  <Link href="mailto:mbentley@roadtoclassic.org" className="text-gray-600">mbentley@roadtoclassic.org</Link>
                 </div>
               </div>
             </div>
@@ -438,101 +451,110 @@ export default function ContactPage() {
               Send Us a Message
             </h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-gray-50 p-8 rounded-lg">
-              <div className="space-y-6">
-                <div className="space-y-2">
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    {...register("name")}
-                    className={cn(
-                      "w-full px-4 py-2 border rounded-md focus:ring-[#1a237e] focus:border-[#1a237e]",
-                      errors.name ? "border-red-500" : "border-gray-300"
-                    )}
-                    placeholder="Your full name"
-                  />
-                  {errors.name && (
-                    <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-                  )}
-                </div>
-
-                <div className="space-y-2">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    {...register("email")}
-                    className={cn(
-                      "w-full px-4 py-2 border rounded-md focus:ring-[#1a237e] focus:border-[#1a237e]",
-                      errors.email ? "border-red-500" : "border-gray-300"
-                    )}
-                    placeholder="Your email address"
-                  />
-                  {errors.email && (
-                    <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-                  )}
-                </div>
-
-                <div className="space-y-2">
-                  <label
-                    htmlFor="number"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="number"
-                    {...register("number")}
-                    className={cn(
-                      "w-full px-4 py-2 border rounded-md focus:ring-[#1a237e] focus:border-[#1a237e]",
-                      errors.number ? "border-red-500" : "border-gray-300"
-                    )}
-                    placeholder="Your phone number"
-                  />
-                  {errors.number && (
-                    <p className="text-red-500 text-sm mt-1">{errors.number.message}</p>
-                  )}
-                </div>
-
-                <div className="space-y-2">
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    {...register("message")}
-                    rows={4}
-                    className={cn(
-                      "w-full px-4 py-2 border rounded-md focus:ring-[#1a237e] focus:border-[#1a237e]",
-                      errors.message ? "border-red-500" : "border-gray-300"
-                    )}
-                    placeholder="Your message here..."
-                  />
-                  {errors.message && (
-                    <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
-                  )}
-                </div>
+            {formSubmitted ? (
+              <div className="bg-green-50 p-6 rounded-lg border border-green-200 text-center">
+                <h3 className="text-xl font-semibold text-green-800 mb-2">Thank You!</h3>
+                <p className="text-green-700">
+                  Your message has been received. Our team will review your inquiry and get back to you shortly.
+                </p>
               </div>
+            ) : (
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-gray-50 p-8 rounded-lg">
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      {...register("name")}
+                      className={cn(
+                        "w-full px-4 py-2 border rounded-md focus:ring-[#1a237e] focus:border-[#1a237e]",
+                        errors.name ? "border-red-500" : "border-gray-300"
+                      )}
+                      placeholder="Your full name"
+                    />
+                    {errors.name && (
+                      <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+                    )}
+                  </div>
 
-              <Button type="submit" variant="primary" className="w-full">
-                Send Message
-              </Button>
-            </form>
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      {...register("email")}
+                      className={cn(
+                        "w-full px-4 py-2 border rounded-md focus:ring-[#1a237e] focus:border-[#1a237e]",
+                        errors.email ? "border-red-500" : "border-gray-300"
+                      )}
+                      placeholder="Your email address"
+                    />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                    )}
+                  </div>
+
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="number"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="number"
+                      {...register("number")}
+                      className={cn(
+                        "w-full px-4 py-2 border rounded-md focus:ring-[#1a237e] focus:border-[#1a237e]",
+                        errors.number ? "border-red-500" : "border-gray-300"
+                      )}
+                      placeholder="Your phone number"
+                    />
+                    {errors.number && (
+                      <p className="text-red-500 text-sm mt-1">{errors.number.message}</p>
+                    )}
+                  </div>
+
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      {...register("message")}
+                      rows={4}
+                      className={cn(
+                        "w-full px-4 py-2 border rounded-md focus:ring-[#1a237e] focus:border-[#1a237e]",
+                        errors.message ? "border-red-500" : "border-gray-300"
+                      )}
+                      placeholder="Your message here..."
+                    />
+                    {errors.message && (
+                      <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+                    )}
+                  </div>
+                </div>
+
+                <Button type="submit" variant="primary" className="w-full">
+                  Send Message
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </div>

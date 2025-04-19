@@ -93,7 +93,6 @@ export default function ContactPage() {
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
       emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
-      console.log("EmailJS initialized");
     } else {
       console.error("EmailJS public key is missing");
     }
@@ -122,11 +121,6 @@ export default function ContactPage() {
 
   const onSubmit = async (data) => {
     try {
-      console.log("Form data being submitted:", data);
-      console.log("EmailJS service ID:", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
-      console.log("EmailJS template ID:", process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
-      console.log("EmailJS public key:", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
-      
       // Format the data to match EmailJS template parameters
       const templateParams = {
         from_name: data.name,
@@ -134,8 +128,6 @@ export default function ContactPage() {
         phone_number: data.number,
         message: data.message
       };
-      
-      console.log("Template parameters:", templateParams);
       
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -149,7 +141,6 @@ export default function ContactPage() {
       reset();
     } catch (error) { 
       console.error("Error sending message:", error);
-      console.error("Error details:", JSON.stringify(error, Object.getOwnPropertyNames(error)));
       showToast("Failed to send message. Please try again or contact us directly by phone.", "error");
     }
   };

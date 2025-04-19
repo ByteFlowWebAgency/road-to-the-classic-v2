@@ -73,8 +73,6 @@ export function EventsContactForm() {
   
   const onSubmit = async (data) => {
     try {
-      console.log('Form data submitted:', data);
-      
       // Format the data to match EmailJS template parameters
       const templateParams = {
         from_name: data.name,
@@ -100,7 +98,6 @@ export function EventsContactForm() {
       reset();
     } catch (error) {
       console.error('Error submitting form:', error);
-      console.error("Error details:", JSON.stringify(error, Object.getOwnPropertyNames(error)));
       
       setFormStatus({
         submitted: false,

@@ -1,0 +1,48 @@
+.fullscreen-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fullscreen-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.fullscreen-content {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+/*h1 ANIMATION*/
+@keyframes slideInOut {
+    0% {
+      transform: translateX(-100%); 
+    }
+    50% {
+      transform: translateX(0); 
+    }
+    100% {
+      transform: translateX(100%); 
+    }
+  }
+  
+  .heading-animation {
+    animation: slideInOut 10s linear infinite; 
+    white-space: nowrap; 
+  }
+  

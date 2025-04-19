@@ -5,8 +5,8 @@ COPY package*.json ./
 
 # Install dependencies only in the development stage
 FROM base AS development
-RUN npm install
 COPY . .
+RUN npm install
 
 # Build Stage
 FROM base AS builder 

@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const navItems = [
-  { label: 'ABOUT', href: '/about' },
-  { label: 'CONTACT', href: '/contact' },
+  { label: "ABOUT", href: "/about" },
+  { label: "CONTACT", href: "/contact" },
   {
-    label: 'EVENTS',
-    href: '#',
+    label: "EVENTS",
+    href: "#",
     dropdown: [
-      { label: 'ROAD TO THE CLASSIC', href: '/events' },
-      { label: 'HALL OF FAME', href: '/HOF' },
+      { label: "ROAD TO THE CLASSIC", href: "/events" },
+      { label: "HALL OF FAME", href: "/HOF" },
     ],
   },
-  { label: 'PARTNERS & SPONSORS', href: '/partners' },
+  { label: "PARTNERS & SPONSORS", href: "/partners" },
 ];
 
 export function Header() {
@@ -64,7 +64,7 @@ export function Header() {
                   {item.label}
                 </Link>
               )}
-              
+
               {/* Desktop Dropdown */}
               {item.dropdown && (
                 <div className="absolute top-full left-0 mt-2 w-48 bg-white border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -100,12 +100,12 @@ export function Header() {
         {/* Mobile Navigation Overlay */}
         <div
           className={`fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
-            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="flex flex-col h-full">
             <div className="flex justify-between items-center p-6 border-b">
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center" onClick={toggleMenu}>
                 <Image
                   src="/images/logo.png"
                   alt="Road to the Classic Inc. Logo"
@@ -132,7 +132,11 @@ export function Header() {
                         className="flex items-center justify-between w-full text-lg font-medium hover:text-[#1a237e] transition-colors"
                       >
                         {item.label}
-                        <ChevronDown className={`h-4 w-4 transition-transform ${activeDropdown === index ? 'rotate-180' : ''}`} />
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform ${
+                            activeDropdown === index ? "rotate-180" : ""
+                          }`}
+                        />
                       </button>
                       {activeDropdown === index && (
                         <div className="mt-2 ml-4 space-y-2">

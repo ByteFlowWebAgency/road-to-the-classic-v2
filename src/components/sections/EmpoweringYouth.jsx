@@ -18,7 +18,7 @@ export function EmpoweringYouth() {
             </p>
           </div>
 
-          <div className="relative aspect-[4/3] h-[400px] rounded-lg overflow-hidden">
+          <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden">
             <Image
               src="/images/IMG_2242.jpg"
               alt="Youth empowerment activities"

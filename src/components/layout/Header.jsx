@@ -105,7 +105,7 @@ export function Header() {
         >
           <div className="flex flex-col h-full">
             <div className="flex justify-between items-center p-6 border-b">
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center" onClick={toggleMenu}>
                 <Image
                   src="/images/logo.png"
                   alt="Road to the Classic Inc. Logo"

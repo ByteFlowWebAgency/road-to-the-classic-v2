@@ -249,12 +249,14 @@ export function About() {
             sponsorship directly contributes to our mission.
           </p>
 
-          <Button
-            className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base md:px-15 md:py-5 text-[#1a237e]"
-            variant="outline"
-          >
-            Support Our Course <span className="text-lg">→</span>
-          </Button>
+          <Link href="/contact">
+            <Button
+              className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base md:px-15 md:py-5 text-[#1a237e]"
+              variant="outline"
+            >
+              Support Our Cause <span className="text-lg">→</span>
+            </Button>
+          </Link>
         </div>
       </section>
     </section>

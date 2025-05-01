@@ -1,4 +1,4 @@
-import { About } from '@/components/sections/About';
+import { About } from "@/components/sections/About";
 
 export default function AboutPage() {
   return (
@@ -22,9 +22,13 @@ export default function AboutPage() {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">ABOUT US</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              ABOUT US
+            </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              Learn about our mission, vision, and the core principles that drive our work to empower youth through education and HBCU awareness
+              Learn about our mission, vision, and the core principles that
+              drive our work to empower youth through education and HBCU
+              awareness
             </p>
           </div>
         </div>

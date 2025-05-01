@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
@@ -6,7 +6,7 @@ export function Hero() {
       {/* Background Video */}
       <div className="absolute inset-0">
         <video
-          src="/images/Takling to a class-1.mp4"
+          src="/images/HomePage Video.mp4"
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
           muted
@@ -16,7 +16,7 @@ export function Hero() {
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/40" />
       </div>
-      
+
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center">
         <div className="max-w-3xl">
@@ -25,16 +25,10 @@ export function Hero() {
             EXPERIENCE FOR IMPACT
           </h1>
           <div className="flex gap-4">
-            <Button 
-              variant="primary" 
-              size="lg"
-            >
+            <Button variant="primary" size="lg">
               Learn More
             </Button>
-            <Button 
-              variant="primary" 
-              size="lg"
-            >
+            <Button variant="primary" size="lg">
               Get Involved
             </Button>
           </div>
@@ -42,4 +36,4 @@ export function Hero() {
       </div>
     </section>
   );
-} 
+}

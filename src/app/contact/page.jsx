@@ -29,7 +29,6 @@ const formSchema = z.object({
     .max(500, { message: "Message cannot exceed 500 characters" }),
 });
 
-
 const impactImages = [
   {
     src: "/images/IMG_6388.jpg",
@@ -83,7 +82,12 @@ const impactImages = [
 
 export default function ContactPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
     resolver: zodResolver(formSchema),
   });
   const { Toast, showToast } = useToast();
@@ -123,20 +127,29 @@ export default function ContactPage() {
   const onSubmit = async (data) => {
     try {
       console.log("Form data being submitted:", data);
-      console.log("EmailJS service ID:", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
-      console.log("EmailJS template ID:", process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
-      console.log("EmailJS public key:", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
-      
+      console.log(
+        "EmailJS service ID:",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      );
+      console.log(
+        "EmailJS template ID:",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      );
+      console.log(
+        "EmailJS public key:",
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+
       // Format the data to match EmailJS template parameters
       const templateParams = {
         from_name: data.name,
         reply_to: data.email,
         phone_number: data.number,
-        message: data.message
+        message: data.message,
       };
-      
+
       console.log("Template parameters:", templateParams);
-      
+
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
@@ -144,13 +157,22 @@ export default function ContactPage() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
 
-      showToast("Thank you for your message! We've received your inquiry and will contact you shortly.", "success");
+      showToast(
+        "Thank you for your message! We've received your inquiry and will contact you shortly.",
+        "success"
+      );
       setFormSubmitted(true);
       reset();
-    } catch (error) { 
+    } catch (error) {
       console.error("Error sending message:", error);
-      console.error("Error details:", JSON.stringify(error, Object.getOwnPropertyNames(error)));
-      showToast("Failed to send message. Please try again or contact us directly by phone.", "error");
+      console.error(
+        "Error details:",
+        JSON.stringify(error, Object.getOwnPropertyNames(error))
+      );
+      showToast(
+        "Failed to send message. Please try again or contact us directly by phone.",
+        "error"
+      );
     }
   };
 
@@ -161,7 +183,7 @@ export default function ContactPage() {
         {/* Background Video */}
         <div className="absolute inset-0">
           <video
-            src="/images/Contact us bg video.mp4"
+            src="/images/Self Defense-1.mp4"
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
             muted
@@ -178,7 +200,8 @@ export default function ContactPage() {
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
               CONTACT US
             </h1>
-            <p className="text-2xl md:text-3xl font-light text-white mb-8 leading-tight">
+            {/* <p className="text-2xl md:text-3xl font-light text-white mb-8 leading-tight"> */}
+            <p className="text-xl text-white/90 leading-relaxed">
               Get in touch with us and discover how we can work together to make
               a difference.
             </p>
@@ -333,7 +356,7 @@ export default function ContactPage() {
                 </p>
               </div>
             </div>
-            <Link 
+            <Link
               href="https://www.zeffy.com/donation-form/donate-to-make-a-difference-13874"
               target="_blank"
               rel="noopener noreferrer"
@@ -382,7 +405,9 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Phone Number</h3>
-                  <Link href="tel:+13309069736" className="text-gray-600">+1 (330) 906-9736</Link>
+                  <Link href="tel:+13309069736" className="text-gray-600">
+                    +1 (330) 906-9736
+                  </Link>
                 </div>
               </div>
 
@@ -392,7 +417,12 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Email Address</h3>
-                  <Link href="mailto:mbentley@roadtoclassic.org" className="text-gray-600">mbentley@roadtoclassic.org</Link>
+                  <Link
+                    href="mailto:mbentley@roadtoclassic.org"
+                    className="text-gray-600"
+                  >
+                    mbentley@roadtoclassic.org
+                  </Link>
                 </div>
               </div>
             </div>
@@ -453,13 +483,19 @@ export default function ContactPage() {
 
             {formSubmitted ? (
               <div className="bg-green-50 p-6 rounded-lg border border-green-200 text-center">
-                <h3 className="text-xl font-semibold text-green-800 mb-2">Thank You!</h3>
+                <h3 className="text-xl font-semibold text-green-800 mb-2">
+                  Thank You!
+                </h3>
                 <p className="text-green-700">
-                  Your message has been received. Our team will review your inquiry and get back to you shortly.
+                  Your message has been received. Our team will review your
+                  inquiry and get back to you shortly.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-gray-50 p-8 rounded-lg">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="space-y-6 bg-gray-50 p-8 rounded-lg"
+              >
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <label
@@ -479,7 +515,9 @@ export default function ContactPage() {
                       placeholder="Your full name"
                     />
                     {errors.name && (
-                      <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.name.message}
+                      </p>
                     )}
                   </div>
 
@@ -501,7 +539,9 @@ export default function ContactPage() {
                       placeholder="Your email address"
                     />
                     {errors.email && (
-                      <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.email.message}
+                      </p>
                     )}
                   </div>
 
@@ -523,7 +563,9 @@ export default function ContactPage() {
                       placeholder="Your phone number"
                     />
                     {errors.number && (
-                      <p className="text-red-500 text-sm mt-1">{errors.number.message}</p>
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.number.message}
+                      </p>
                     )}
                   </div>
 
@@ -545,7 +587,9 @@ export default function ContactPage() {
                       placeholder="Your message here..."
                     />
                     {errors.message && (
-                      <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.message.message}
+                      </p>
                     )}
                   </div>
                 </div>

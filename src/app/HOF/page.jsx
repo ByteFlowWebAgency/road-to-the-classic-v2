@@ -1,68 +1,16 @@
 "use client";
-import { useState, useEffect } from 'react'; // Combined imports
+import { useState, useEffect } from 'react';
 import { Heading1, Section } from '@/components/ui';
 import Image from 'next/image'; 
 import {
     Typography, 
     Heading2,  
-  } from '@/components/ui';
-  import { UpcomingEvents } from '@/components/sections/UpcomingEvents';
+} from '@/components/ui';
+import { UpcomingEvents } from '@/components/sections/UpcomingEvents';
+import { events, EVENT_TYPES } from '@/data/events';
 import './BCHOFstyle.css';
 
-
-const eventsData = [
-    {
-        id: 1,
-        date: "Thu, June 19, 2025",
-        title: "Road To The Classic Black College Football Hall Of Fame HBCU Youth Entrepreneur Expo",
-        time: "12:00 PM - 6:00 PM",
-        location: "Crenshaw Park",
-        host: "Future Promise",
-    },
-    {
-        id: 2,
-        date: "August 12-14, 2025 (Tues-Thurs)",
-        title: "Road To The Classic Black College Football Hall of Fame HBCU Cheer & Dance Competition",
-        time: "9:00 AM - 3:00 PM (Aug 12-13), 9:00 AM - 12:00 PM (Aug 14)",
-        location: 'Edward &quot;Peel&quot; Coleman',
-        host: "Road To The Classic Inc.",
-    },
-    {
-        id: 3,
-        date: "August 15-17, 2025 (Fri-Sun)",
-        title: "Road To The Classic Black College Football Hall of Fame HBCU Youth Football Tournament",
-        time: "Friday Registration, Saturday 8:00 AM - 8:00 PM, Sunday 8:00 AM - 2:00 PM",
-        location: "Hall of Fame Football Fields",
-        host: "L.A.V.A. Athletics",
-    },
-    {
-        id: 4,
-        date: "Sat, August 16, 2025",
-        title: "Road To The Classic Black College Football Hall Of Fame HBCU Hoop for Coop Youth...",
-        time: "11:00 AM - 2:00 PM",
-        location: "Hartford Middle School/ Hartford New Facility",
-        host: "Guys &amp; Gals Community Partnership Inc.",
-    },
-    {
-        id: 5,
-        date: "Fri, August 22, 2025",
-        title: "Road To The Classic Black College Football Hall Of Fame HBCU Spelling Bee",
-        time: "6:00 PM - 8:00 PM (TBA)",
-        location: "Hall of Fame Room",
-        host: "L.A.V.A. Athletics/Crouse CLC",
-    },
-    {
-        id: 6,
-        date: "Sat, August 23, 2025",
-        title: "Road To The Classic Black College Football Hall Of Fame HBCU STEAM Fair and Live...",
-        time: "10:00 AM - 3:00 PM",
-        location: "Cultural Center (Great Court)",
-        host: "United Family Community and STEAM Hartford Middle School",
-    },
-];
-
-
-export default function HallOfFamePage(){
+export default function HallOfFamePage() {
     const images = [
         "/images/75044160007-black-college-football-hof-classic-55.webp",
         "/images/75044158007-black-college-football-hof-classic-65.webp",
@@ -71,13 +19,16 @@ export default function HallOfFamePage(){
         "/images/75044157007-black-college-football-hof-classic-63.webp",
         "/images/75044155007-black-college-football-hof-classic-59.webp",
         "/images/75044154007-black-college-football-hof-classic-62.webp",
-    ]
+    ];
 
-    const [currentIndex, setCurrentIndex] = useState(0)
+    const [currentIndex, setCurrentIndex] = useState(0);
     const [windowDimensions, setWindowDimensions] = useState({
         width: 0,
         height: 0,
-    })
+    });
+
+    // Get Hall of Fame events
+    const hofEvents = events.filter(event => event.type === EVENT_TYPES.HALL_OF_FAME);
 
     useEffect(() => {
         // Set initial window dimensions
@@ -94,25 +45,23 @@ export default function HallOfFamePage(){
         };
 
         window.addEventListener("resize", handleResize);
-
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-
-    //using useEffect to handle automatic immage switch every few seconds
-    useEffect(()=>{
+    useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 3000); // images changes every 3 seconds
+        }, 3000);
 
-        return () => clearInterval(intervalId); //clear up inyerval on unmount
+        return () => clearInterval(intervalId);
     }, [images.length]);
 
     return (
         <div>
-            <Section className="fullscreen-section"
-                    style={{ backgroundImage: `url(${images[currentIndex]})`}}
-                    >
+            <Section 
+                className="fullscreen-section"
+                style={{ backgroundImage: `url(${images[currentIndex]})` }}
+            >
                 <div className="fullscreen-content">
                     <Heading1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center">
                         Black College Football Hall of Fame
@@ -148,7 +97,7 @@ export default function HallOfFamePage(){
             </Section>
 
             <UpcomingEvents 
-                customEvents={eventsData}
+                customEvents={hofEvents}
                 background="[#1a237e]"
                 titleColor="white"
                 description={null}

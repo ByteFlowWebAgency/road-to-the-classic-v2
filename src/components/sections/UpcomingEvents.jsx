@@ -1,13 +1,23 @@
+<<<<<<< HEAD
 import { events } from "@/data/events";
 import { EventCard } from "@/components/ui/EventCard";
 import { Heading2 } from "@/components/ui";
 
 export function UpcomingEvents({
+=======
+import { events } from "@/data/events"
+import { EventCard } from "@/components/ui/EventCard"
+import { Heading2 } from "@/components/ui"
+
+export function UpcomingEvents({ 
+  limit = 3, 
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
   showViewAll = true,
   title = "Upcoming Events",
   description = "Join us for these exciting Road to the Classic events",
   background = "gray-50",
   customEvents = null,
+<<<<<<< HEAD
   titleColor = "primary",
 }) {
   const upcomingEvents = customEvents ?? events;
@@ -24,6 +34,17 @@ export function UpcomingEvents({
         >
           {title}
         </Heading2>
+=======
+  titleColor = "primary"
+}) {
+  // Use custom events if provided, otherwise use default events
+  const upcomingEvents = customEvents ? customEvents.slice(0, limit) : events.slice(0, limit)
+
+  return (
+    <section className={`py-12 ${background.startsWith("[") ? `bg-${background}` : `bg-${background}`}`}>
+      <div className="container mx-auto px-4 md:px-16">
+        <Heading2 color={titleColor} className="text-4xl font-bold text-center mb-8">{title}</Heading2>
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
         {description && (
           <p className="text-lg text-gray-600 text-center mb-8">
             {description}
@@ -48,5 +69,10 @@ export function UpcomingEvents({
         )}
       </div>
     </section>
+<<<<<<< HEAD
   );
 }
+=======
+  )
+} 
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f

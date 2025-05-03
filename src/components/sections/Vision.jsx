@@ -1,8 +1,13 @@
 import Image from 'next/image';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import { events } from '@/data/events';
 import { Calendar, Clock, MapPin, User } from 'lucide-react';
+=======
+import { events } from '@/data/events';
+import { EventCard } from '@/components/ui/EventCard';
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
 
 // Helper function to extract date object from date string
 const getEventDate = (dateStr) => {
@@ -59,7 +64,10 @@ const getUpcomingEvents = () => {
     })
     .slice(0, 6); // Show next 6 upcoming events
 };
+<<<<<<< HEAD
 >>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
+=======
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
 
 const visionItems = [
   {
@@ -85,6 +93,7 @@ const visionItems = [
 ];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const eventItems = [
   { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
   { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
@@ -100,6 +109,11 @@ export function Vision() {
   const upcomingEvents = getUpcomingEvents();
 
 >>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
+=======
+export function Vision() {
+  const upcomingEvents = getUpcomingEvents();
+
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
   return (
     <div className="relative">
       {/* Vision Section */}
@@ -136,13 +150,15 @@ export function Vision() {
 
       {/* Events Section with Arc Design */}
       <section className="relative bg-[#1a237e]">
-        <div className="container mx-auto px-4 pb-32">
+        {/* Events Container - Added z-index to ensure content stays above the arc */}
+        <div className="container mx-auto px-4 pb-32 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">UPCOMING EVENTS</h2>
             <p className="text-white/80">
               Join us for these exciting opportunities to learn, grow, and connect with the HBCU community.
             </p>
           </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {eventItems.map((event, index) => (
@@ -156,10 +172,13 @@ export function Vision() {
             ))}
           </div>
 =======
+=======
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
           
           {upcomingEvents.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {upcomingEvents.map((event, index) => (
+<<<<<<< HEAD
                 <div
                   key={index}
                   className="bg-white/5 p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all cursor-pointer group"
@@ -185,6 +204,10 @@ export function Vision() {
                       <span>Host: {event.host}</span>
                     </div>
                   </div>
+=======
+                <div key={index} className="bg-white rounded-lg relative z-20">
+                  <EventCard event={event} noShadow />
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
                 </div>
               ))}
             </div>
@@ -193,11 +216,14 @@ export function Vision() {
               <p>No upcoming events scheduled at this time. Please check back later!</p>
             </div>
           )}
+<<<<<<< HEAD
 >>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
+=======
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
         </div>
         
-        {/* Arc Design */}
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden" style={{ height: '15vw' }}>
+        {/* Arc Design - Moved below content and adjusted z-index */}
+        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden z-0" style={{ height: '15vw' }}>
           <svg
             viewBox="0 0 100 100"
             preserveAspectRatio="none"

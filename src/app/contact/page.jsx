@@ -34,13 +34,21 @@ const impactImages = [
     src: "/images/IMG_6388.jpg",
     alt: "Students engaging in educational activities",
     caption:
+<<<<<<< HEAD
       "Transform a student's future: Your support helped 500+ youth access life-changing educational programs last year",
+=======
+      "Transform a student&apos;s future: Your support helped 500+ youth access life-changing educational programs last year",
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
   },
   {
     src: "/images/IMG_6387.jpg",
     alt: "Community mentorship program",
     caption:
+<<<<<<< HEAD
       "92% of our mentored students achieve their academic goals. Be the mentor they'll remember forever",
+=======
+      "92% of our mentored students achieve their academic goals. Be the mentor they&apos;ll remember forever",
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
   },
   {
     src: "/images/IMG_5781.jpg",
@@ -52,7 +60,11 @@ const impactImages = [
     src: "/images/IMG_5142.jpg",
     alt: "STEM education workshop",
     caption:
+<<<<<<< HEAD
       "Build tomorrow's innovators: 78% of our STEM students pursue technology careers. Your support makes it possible",
+=======
+      "Build tomorrow&apos;s innovators: 78% of our STEM students pursue technology careers. Your support makes it possible",
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
   },
   {
     src: "/images/IMG_2729.jpg",
@@ -97,6 +109,10 @@ export default function ContactPage() {
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
       emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+<<<<<<< HEAD
+=======
+      console.log("EmailJS initialized");
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
     } else {
       console.error("EmailJS public key is missing");
     }
@@ -125,6 +141,23 @@ export default function ContactPage() {
 
   const onSubmit = async (data) => {
     try {
+<<<<<<< HEAD
+=======
+      console.log("Form data being submitted:", data);
+      console.log(
+        "EmailJS service ID:",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      );
+      console.log(
+        "EmailJS template ID:",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      );
+      console.log(
+        "EmailJS public key:",
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
       // Format the data to match EmailJS template parameters
       const templateParams = {
         from_name: data.name,
@@ -133,6 +166,11 @@ export default function ContactPage() {
         message: data.message,
       };
 
+<<<<<<< HEAD
+=======
+      console.log("Template parameters:", templateParams);
+
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
@@ -148,6 +186,13 @@ export default function ContactPage() {
       reset();
     } catch (error) {
       console.error("Error sending message:", error);
+<<<<<<< HEAD
+=======
+      console.error(
+        "Error details:",
+        JSON.stringify(error, Object.getOwnPropertyNames(error))
+      );
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
       showToast(
         "Failed to send message. Please try again or contact us directly by phone.",
         "error"
@@ -162,7 +207,11 @@ export default function ContactPage() {
         {/* Background Video */}
         <div className="absolute inset-0">
           <video
+<<<<<<< HEAD
             src="/images/Contact us bg video.mp4"
+=======
+            src="/images/Self Defense-1.mp4"
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
             muted
@@ -179,7 +228,12 @@ export default function ContactPage() {
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
               CONTACT US
             </h1>
+<<<<<<< HEAD
             <p className="text-2xl md:text-3xl font-light text-white mb-8 leading-tight">
+=======
+            {/* <p className="text-2xl md:text-3xl font-light text-white mb-8 leading-tight"> */}
+            <p className="text-xl text-white/90 leading-relaxed">
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
               Get in touch with us and discover how we can work together to make
               a difference.
             </p>
@@ -300,9 +354,15 @@ export default function ContactPage() {
               Join Our Mission
             </h3>
             <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+<<<<<<< HEAD
               Your time and expertise can transform a student's future. Whether
               through mentorship, volunteering at events, or sharing your
               professional experience, you can make a lasting impact in our
+=======
+              Your time and expertise can transform a student&apos;s future.
+              Whether through mentorship, volunteering at events, or sharing
+              your professional experience, you can make a lasting impact in our
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
               community.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

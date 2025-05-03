@@ -9,10 +9,13 @@ services:
       - .:/app
       - /app/node_modules
 <<<<<<< HEAD
+<<<<<<< HEAD
       - ./public:/app/public
       - next-cache:/app/.next/cache
 =======
 >>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
+=======
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
     ports:
       - "3000:3000"
     environment:

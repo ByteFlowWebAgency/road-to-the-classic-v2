@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Calendar, Clock, MapPin, User } from 'lucide-react'
+=======
+import { Calendar, Clock, MapPin, User, Mail, Link, Video } from 'lucide-react'
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
 
 // Helper function to extract day and month from date string
 const extractDateParts = (dateStr) => {
@@ -11,14 +15,25 @@ const extractDateParts = (dateStr) => {
   }
 }
 
+<<<<<<< HEAD
 export function EventCard({ event }) {
   const { title, date, time, location, host, contact } = event
+=======
+export function EventCard({ event, noShadow = false }) {
+  const { title, date, time, location, host, contact, contactEmail, registrationLink, videoLink } = event
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
   const { day, month } = extractDateParts(date)
   
   const isMultiDay = date.includes("-")
 
   return (
+<<<<<<< HEAD
     <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
+=======
+    <div className={`bg-white rounded-lg overflow-hidden border border-gray-100 ${
+      noShadow ? '' : 'shadow-md hover:shadow-lg'
+    } transition-shadow`}>
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
       <div className="flex p-6">
         {/* Date Display */}
         {!isMultiDay && day && month && (
@@ -62,10 +77,54 @@ export function EventCard({ event }) {
             )}
             
             {contact && (
+<<<<<<< HEAD
               <div className="flex items-start ml-7 mt-1">
                 <span>Contact: {contact}</span>
               </div>
             )}
+=======
+              <div className="flex items-start">
+                <Mail className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                <span>
+                  Contact: {contact}
+                  {contactEmail && (
+                    <a 
+                      href={`mailto:${contactEmail}`}
+                      className="ml-2 text-blue-600 hover:text-blue-800"
+                    >
+                      ({contactEmail})
+                    </a>
+                  )}
+                </span>
+              </div>
+            )}
+
+            <div className="flex flex-wrap gap-2 mt-4">
+              {registrationLink && (
+                <a
+                  href={registrationLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-[#1a237e] text-white rounded-md hover:bg-[#283593] transition-colors text-sm"
+                >
+                  <Link className="h-4 w-4 mr-2" />
+                  Register Now
+                </a>
+              )}
+              
+              {videoLink && (
+                <a
+                  href={videoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors text-sm"
+                >
+                  <Video className="h-4 w-4 mr-2" />
+                  Watch Video
+                </a>
+              )}
+            </div>
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
           </div>
         </div>
       </div>

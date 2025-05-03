@@ -10,6 +10,7 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4 border-b pb-2">About Us</h3>
             <ul className="space-y-2">
+<<<<<<< HEAD
               <li>
                 <Link
                   href="/about"
@@ -34,11 +35,17 @@ export function Footer() {
                   Partners and Sponsors
                 </Link>
               </li>
+=======
+              <li><Link href="/about" className="text-gray-600 hover:text-[#1a237e]">Who We Are</Link></li>
+              <li><Link href="/contact" className="text-gray-600 hover:text-[#1a237e]">Get Involved</Link></li>
+              <li><Link href="/partners" className="text-gray-600 hover:text-[#1a237e]">Partners and Sponsors</Link></li>
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
             </ul>
           </div>
           <div>
             <h3 className="font-bold text-lg mb-4 border-b pb-2">Events</h3>
             <ul className="space-y-2">
+<<<<<<< HEAD
               <li>
                 <Link
                   href="/events"
@@ -55,18 +62,28 @@ export function Footer() {
                   Black College Football Hall of Fame Events
                 </Link>
               </li>
+=======
+              <li><Link href="/rttc-events" className="text-gray-600 hover:text-[#1a237e]">Road To The Classic Events</Link></li>
+              <li><Link href="/bcfhof-events" className="text-gray-600 hover:text-[#1a237e]">Black College Football Hall of Fame Events</Link></li>
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
             </ul>
           </div>
           <div>
             <h3 className="font-bold text-lg mb-4 border-b pb-2">Learn More</h3>
+<<<<<<< HEAD
             <p className="text-gray-600 mb-4">
               Discover how you can support our mission today.
             </p>
             <Link
+=======
+            <p className="text-gray-600 mb-4">Discover how you can support our mission today.</p>
+            <Link 
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
               href="https://www.zeffy.com/donation-form/donate-to-make-a-difference-13874"
               target="_blank"
               rel="noopener noreferrer"
             >
+<<<<<<< HEAD
               <Button className="bg-[#1a237e] hover:bg-[#0d1757] w-full mb-4">
                 Give Now
               </Button>
@@ -87,6 +104,19 @@ export function Footer() {
               >
                 <FaFacebook className="h-6 w-6" />
               </Link>
+=======
+              <Button className="bg-[#1a237e] hover:bg-[#0d1757] w-full mb-4">Give Now</Button>
+            </Link>
+            <h4 className="font-medium mb-2">Follow Us on Our Socials</h4>
+            <div className="flex gap-4">
+              <Link href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" className="text-[#1a237e]">
+                <Instagram className="h-6 w-6" />
+              </Link>
+              <Link href="#" aria-label="LinkedIn" className="text-[#1a237e]">
+                <Linkedin className="h-6 w-6" />
+              </Link>
+              
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
             </div>
           </div>
         </div>

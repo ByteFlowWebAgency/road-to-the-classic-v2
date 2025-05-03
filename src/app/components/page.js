@@ -1,9 +1,9 @@
-import { 
-  Button, 
-  Typography, 
-  Heading1, 
-  Heading2, 
-  Heading3, 
+import {
+  Button,
+  Typography,
+  Heading1,
+  Heading2,
+  Heading3,
   Paragraph,
   Link,
   Section,
@@ -25,28 +25,27 @@ export default function ComponentsPage() {
           The color scheme is based on our primary color #1a237e (deep blue) and secondary color #ffffff (white),
           with black (#000000) as the accent color.
         </Paragraph>
-        
         {/* Color Palette */}
         <Heading2 color="primary" className="mb-6 mt-12">Color Palette</Heading2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          <div className="flex flex-col">
-            <div className="h-20 bg-[#1a237e] rounded-md"></div>
-            <p className="text-sm mt-2 font-medium">Primary: #1a237e</p>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-20 bg-[#303f9f] rounded-md"></div>
-            <p className="text-sm mt-2 font-medium">Primary Light: #303f9f</p>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-20 bg-white border border-gray-200 rounded-md"></div>
-            <p className="text-sm mt-2 font-medium">Secondary: #ffffff</p>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-20 bg-[#000000] rounded-md"></div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12" />
+        <div className="flex flex-col">
+          <div className="h-20 bg-[#1a237e] rounded-md" />
+          <p className="text-sm mt-2 font-medium">Primary: #1a237e</p>
+        </div>
+        <div className="flex flex-col">
+          <div className="h-20 bg-[#303f9f] rounded-md" />
+          <p className="text-sm mt-2 font-medium">Primary Light: #303f9f</p>
+        </div>
+        <div className="flex flex-col">
+          <div className="h-20 bg-white border border-gray-200 rounded-md" />
+          <p className="text-sm mt-2 font-medium">Secondary: #ffffff</p>
+        </div>
+        <div className="flex flex-col">
+          <div className="h-20 bg-[#000000] rounded-md">
             <p className="text-sm mt-2 font-medium">Accent: #000000</p>
           </div>
         </div>
-        
+
         {/* Typography Examples */}
         <Heading2 color="primary" className="mb-6 mt-12">Typography</Heading2>
         <div className="space-y-4 mb-12">
@@ -60,7 +59,11 @@ export default function ComponentsPage() {
           <Typography variant="small">Small text is used for less important information.</Typography>
           <Typography variant="subtle">Subtle text is used for secondary information.</Typography>
           <Typography variant="label">Label text is used for form labels and small headings.</Typography>
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
           <div className="mt-4 space-y-2">
             <Typography color="primary">Primary Text (#1a237e)</Typography>
             <Typography color="secondary" className="bg-[#1a237e] inline-block px-2 py-1 rounded">Secondary Text (white)</Typography>
@@ -73,7 +76,11 @@ export default function ComponentsPage() {
             </div>
           </div>
         </div>
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
         {/* Button Examples */}
         <Heading2 color="primary" className="mb-6 mt-12">Buttons</Heading2>
         <div className="space-y-6 mb-12">
@@ -86,14 +93,22 @@ export default function ComponentsPage() {
             <Button variant="link">Link Button</Button>
             <Button variant="danger">Danger Button</Button>
           </div>
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
           <div className="flex flex-wrap gap-4">
             <Button size="sm" variant="primary">Small</Button>
             <Button size="md" variant="primary">Medium</Button>
             <Button size="lg" variant="primary">Large</Button>
             <Button size="xl" variant="primary">Extra Large</Button>
           </div>
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
           <div className="space-y-4">
             <Button disabled variant="primary">Disabled Button</Button>
             <div className="w-full border border-gray-200 rounded-md">
@@ -101,7 +116,11 @@ export default function ComponentsPage() {
             </div>
           </div>
         </div>
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
         {/* Link Examples */}
         <Heading2 color="primary" className="mb-6 mt-12">Links</Heading2>
         <div className="space-y-4 mb-12">
@@ -112,18 +131,30 @@ export default function ComponentsPage() {
             <Link href="#" variant="footer">Footer Link</Link>
             <Link href="#" variant="accent">Accent Link</Link>
           </div>
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
           <div className="flex flex-wrap gap-4 mt-4">
             <Link href="#" variant="button">Button Link</Link>
             <Link href="#" variant="buttonOutline">Button Outline Link</Link>
             <Link href="#" variant="buttonAccent">Button Accent Link</Link>
           </div>
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
           <div className="mt-4">
             <Link href="https://example.com" external>External Link</Link>
           </div>
         </div>
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
         {/* Card Examples */}
         <Heading2 color="primary" className="mb-6 mt-12">Cards</Heading2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -139,12 +170,12 @@ export default function ComponentsPage() {
               <Button variant="primary">Action</Button>
             </CardFooter>
           </Card>
-          
+
           <Card>
-            <img 
-              src="https://via.placeholder.com/400x225" 
-              alt="Example" 
-              className="w-full h-[225px] object-cover" 
+            <img
+              src="https://via.placeholder.com/400x225"
+              alt="Example"
+              className="w-full h-[225px] object-cover"
             />
             <CardContent>
               <CardTitle className="mb-2">Card With Image</CardTitle>
@@ -155,7 +186,7 @@ export default function ComponentsPage() {
               <Button variant="primary">Save</Button>
             </CardFooter>
           </Card>
-          
+
           <Card className="flex flex-col">
             <CardContent className="flex-1">
               <CardTitle className="mb-4">Simple Card</CardTitle>
@@ -163,11 +194,11 @@ export default function ComponentsPage() {
             </CardContent>
           </Card>
         </div>
-        
+
         {/* Section Examples */}
         <Heading2 color="primary" className="mb-6 mt-12">Sections</Heading2>
       </Section>
-      
+
       <Section background="primary">
         <Heading3 className="mb-4">Primary Background Section</Heading3>
         <Paragraph>This section uses the primary background color (#1a237e).</Paragraph>
@@ -176,13 +207,21 @@ export default function ComponentsPage() {
           <Button variant="accent">Accent Button</Button>
         </div>
       </Section>
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
       <Section background="accent">
         <Heading3 className="mb-4">Accent Background Section</Heading3>
         <Paragraph>This section uses the accent background color (#000000).</Paragraph>
         <Button variant="primary" className="mt-4">Primary Button</Button>
       </Section>
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
       <Section background="secondary">
         <Heading3 className="mb-4" color="primary">Secondary Background Section</Heading3>
         <Paragraph>This section uses the secondary background color (white).</Paragraph>
@@ -191,7 +230,11 @@ export default function ComponentsPage() {
           <Button variant="accent" className="mt-4">Accent Button</Button>
         </div>
       </Section>
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
       <Section background="dark">
         <Heading3 className="mb-4 text-white">Dark Background Section</Heading3>
         <Paragraph className="text-white">This section uses the dark background color.</Paragraph>
@@ -201,5 +244,12 @@ export default function ComponentsPage() {
         </div>
       </Section>
     </>
+<<<<<<< HEAD
   );
 } 
+=======
+
+  );
+
+}
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89

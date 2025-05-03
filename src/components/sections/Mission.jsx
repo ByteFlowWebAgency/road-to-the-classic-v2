@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+<<<<<<< HEAD
 
+=======
+import Link from 'next/link';
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
 export function Mission() {
   return (
     <section className="py-16 bg-[#1a237e] text-white">
@@ -9,7 +13,11 @@ export function Mission() {
           <div>
             <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
               <Image
+<<<<<<< HEAD
                 src="/images/IMG_5651.jpg"
+=======
+                src="/images/image 10.png"
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
                 alt="Students participating in activities"
                 fill
                 className="object-cover"
@@ -26,8 +34,17 @@ export function Mission() {
               arts, business, and literature.
             </p>
             <div className="flex gap-4">
+<<<<<<< HEAD
               <Button variant="primary" className="bg-white text-[#1a237e] hover:bg-gray-100 hover:text-[#1a237e]">About Us</Button>
               <Button variant="secondary" className="text-white hover:bg-[#1a237e] hover:text-white border-white">Get Involved</Button>
+=======
+              <Link href="/about">
+                <Button variant="primary" className="bg-white text-[#1a237e] hover:bg-gray-100 hover:text-[#1a237e]">About Us</Button>
+              </Link>
+              <Link href="/contact">
+                <Button variant="secondary" className="text-white hover:bg-[#1a237e] hover:text-white border-white">Get Involved</Button>
+              </Link>
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
             </div>
           </div>
         </div>

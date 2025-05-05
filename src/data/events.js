@@ -76,6 +76,7 @@ export const events = [
     location: "Cultural Center (Fry Theatre)",
     host: "Future Promise",
     contact: "Tori Fontes",
+    contactEmail: "ToriFontes@gmail.com",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform"
   },
   {
@@ -87,6 +88,7 @@ export const events = [
     location: "HDs Entertainment Center",
     host: "Brooks Rivers Fashion",
     contact: "Jenaye Brooks-Rivers",
+    contactEmail: "jenayebrooksrivers@gmail.com",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform"
   },
   {
@@ -200,15 +202,16 @@ export const events = [
     host: "United Family Community and STEAM Hartford Middle School",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform"
   },
- {
+  {
     id: "hof-6",
     type: EVENT_TYPES.HALL_OF_FAME,
-    title: "Road To The Classic” Black College Football Hall of Fame HBCU Youth Football Tournament",
+    title: "Road To The Classic Black College Football Hall of Fame HBCU Youth Football Tournament",
     date: "August 16, 2025 (Saturday)",
     time: "12:00 PM - 6:00 PM",
     location: "Crenshaw Park",
     host: "L.A.V.A. Athletics",
-    contact: "Raymond Trice (raytrice63@gmail.com)",
+    contact: "Raymond Trice",
+    contactEmail: "raytrice63@gmail.com",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform"
   }
 ]; 

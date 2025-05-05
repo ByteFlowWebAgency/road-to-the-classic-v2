@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -6,7 +7,7 @@ export function Hero() {
       {/* Background Video */}
       <div className="absolute inset-0">
         <video
-          src="/images/HomePage Video.mp4"
+          src="/images/Takling to a class-1.mp4"
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
           muted
@@ -25,10 +26,16 @@ export function Hero() {
             EXPERIENCE FOR IMPACT
           </h1>
           <div className="flex gap-4">
-            <Button variant="primary" size="lg">
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => (window.location.href = "/about")}
+            >
               Learn More
             </Button>
-            <Button variant="primary" size="lg">
+            <Button>
+              variant="primary" size="lg" onClick=
+              {() => (window.location.href = "/contact")}
               Get Involved
             </Button>
           </div>

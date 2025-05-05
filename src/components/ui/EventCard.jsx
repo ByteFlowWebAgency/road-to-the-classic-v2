@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import { Calendar, Clock, MapPin, User } from 'lucide-react'
+=======
 import { Calendar, Clock, MapPin, User, Mail, Link, Video } from 'lucide-react'
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
 
 // Helper function to extract day and month from date string
 const extractDateParts = (dateStr) => {
@@ -11,16 +15,25 @@ const extractDateParts = (dateStr) => {
   }
 }
 
+<<<<<<< HEAD
+export function EventCard({ event }) {
+  const { title, date, time, location, host, contact } = event
+=======
 export function EventCard({ event, noShadow = false }) {
   const { title, date, time, location, host, contact, contactEmail, registrationLink, videoLink } = event
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
   const { day, month } = extractDateParts(date)
   
   const isMultiDay = date.includes("-")
 
   return (
+<<<<<<< HEAD
+    <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
+=======
     <div className={`bg-white rounded-lg overflow-hidden border border-gray-100 ${
       noShadow ? '' : 'shadow-md hover:shadow-lg'
     } transition-shadow`}>
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
       <div className="flex p-6">
         {/* Date Display */}
         {!isMultiDay && day && month && (
@@ -64,6 +77,12 @@ export function EventCard({ event, noShadow = false }) {
             )}
             
             {contact && (
+<<<<<<< HEAD
+              <div className="flex items-start ml-7 mt-1">
+                <span>Contact: {contact}</span>
+              </div>
+            )}
+=======
               <div className="flex items-start">
                 <Mail className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
                 <span>
@@ -105,6 +124,7 @@ export function EventCard({ event, noShadow = false }) {
                 </a>
               )}
             </div>
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
           </div>
         </div>
       </div>

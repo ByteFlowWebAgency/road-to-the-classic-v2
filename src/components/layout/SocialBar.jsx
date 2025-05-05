@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { FaFacebook, FaInstagram } from "react-icons/fa"
 
+
 export function SocialBar() {
   return (
     <div className="bg-[#1a237e] text-white py-2 px-4 flex justify-between items-center">
@@ -12,14 +13,14 @@ export function SocialBar() {
           <FaInstagram className="h-5 w-5" />
         </Link>
       </div>
-      <Link 
+      <Link
         href="https://www.zeffy.com/donation-form/donate-to-make-a-difference-13874"
         target="_blank"
-        rel="noopener noreferrer" 
+        rel="noopener noreferrer"
         className="bg-white text-[#1a237e] px-4 py-1 rounded text-sm font-medium"
       >
         GIVE NOW
       </Link>
     </div>
-  )
-} 
+  );
+}

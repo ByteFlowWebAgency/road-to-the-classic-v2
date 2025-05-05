@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Instagram, Linkedin, Twitter } from "lucide-react"
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
@@ -34,11 +34,11 @@ export function Footer() {
             </Link>
             <h4 className="font-medium mb-2">Follow Us on Our Socials</h4>
             <div className="flex gap-4">
-              <Link href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" className="text-[#1a237e]">
-                <Instagram className="h-6 w-6" />
+              <Link href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" className="text-[#1a237e]" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="h-6 w-6" />
               </Link>
-              <Link href="#" aria-label="LinkedIn" className="text-[#1a237e]">
-                <Linkedin className="h-6 w-6" />
+              <Link href="https://www.facebook.com/profile.php?id=61573107310164" aria-label="Facebook" className="text-[#1a237e]" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="h-6 w-6" />
               </Link>
               
             </div>

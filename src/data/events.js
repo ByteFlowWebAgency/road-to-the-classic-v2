@@ -203,12 +203,12 @@ export const events = [
   {
     id: "hof-6",
     type: EVENT_TYPES.HALL_OF_FAME,
-    title: "Road To The Classic Black College Football Hall of Fame HBCU Hoop for Coop Youth Health Fair and Sports Clinic",
+    title: "Road To The Classic” Black College Football Hall of Fame HBCU Youth Football Tournament",
     date: "August 16, 2025 (Saturday)",
-    time: "11:00 AM - 2:00 PM",
-    location: "Hartford Middle School/ Hartford New Facility",
-    host: "Guys and Gals Community Partnership Inc.",
-    contact: "Jerome Moss",
+    time: "12:00 PM - 6:00 PM",
+    location: "Crenshaw Park",
+    host: "L.A.V.A. Athletics",
+    contact: "Raymond Trice (raytrice63@gmail.com)",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform"
   }
 ]; 

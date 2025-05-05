@@ -6,7 +6,7 @@ export function SocialBar() {
     <div className="bg-[#1a237e] text-white py-2 px-4 flex justify-between items-center">
       <div className="flex gap-4">
         <Link
-          href="https://www.facebook.com/61573107310164/videos/494272420417120"
+          href="https://www.facebook.com/profile.php?id=61573107310164"
           aria-label="Facebook"
         >
           <FaFacebook className="h-5 w-5" />

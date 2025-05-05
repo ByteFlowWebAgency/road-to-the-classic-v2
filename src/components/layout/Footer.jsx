@@ -59,6 +59,7 @@ export function Footer() {
           </div>
           <div>
             <h3 className="font-bold text-lg mb-4 border-b pb-2">Learn More</h3>
+
             <p className="text-gray-600 mb-4">
               Discover how you can support our mission today.
             </p>

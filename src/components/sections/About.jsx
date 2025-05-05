@@ -1,3 +1,56 @@
+
+import Image from "next/image"
+import { Button } from "@/components/ui/button";
+import Link from 'next/link'
+
+const corePrinciplesItems = [
+  {
+    title: 'Unity',
+    description: 'Celebrate cultural diversity and history through shared experiences.',
+  },
+  {
+    title: 'Self-Determination',
+    description: 'Empower students to pursue education and goals through mentorship.',
+  },
+  {
+    title: 'Collective Work & Responsibility',
+    description: 'Build stronger communities across discipline and entrepreneurship.',
+  },
+  {
+    title: 'Purpose',
+    description: 'Guide youth to discover their unique talents and contributions.',
+  },
+  {
+    title: 'Creativity',
+    description: 'Foster innovation and artistic expression in all endeavors.',
+  },
+  {
+    title: 'Faith',
+    description: 'Encourage self-actualization and belief in one\'s potential.',
+  },
+
+];
+
+
+export function About() {
+  return (
+    <section className="pt-0 py-16 bg-white">
+
+      {/* Our Mission & Our Vision Section*/}
+      <div className="container mx-auto px-6 mt-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+          <div className="space-y-10">
+
+            {/* Our Mission */}
+            <div>
+              <h2 className="text-3xl font-bold mb-4 text-[#1a237e]">Our Mission</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Our mission is to increase the knowledge of the impact of Historically Black Colleges and Universities
+                on the building of American society and the contributions of African Americans and people of color that
+                have influenced America through their contributions to medicine, science, technology, innovation,
+                engineering, sports, arts, buisiness, and literature. 
+=========
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -74,6 +127,11 @@ export function About() {
               <Image
                 src="/images/IMG_4300.jpg"
                 alt="Mission and Vision Image"
+>>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
+=======
+                src="/images/IMG_4300.jpg"
+                alt="Mission and Vision Image"
+>>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -82,6 +140,12 @@ export function About() {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    </section>
+  )
+} 
+=======
 
       {/* Who We Are Section*/}
       <div className="bg-gray-200 py-2 mt-5">
@@ -260,3 +324,4 @@ export function About() {
     </section>
   );
 }
+

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react"; // Combined imports
+import { useState, useEffect } from "react";
 import { Heading1, Section } from "@/components/ui";
 import Image from "next/image";
 import { Typography, Heading2 } from "@/components/ui";

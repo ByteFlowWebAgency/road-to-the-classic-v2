@@ -1,13 +1,6 @@
 import Image from 'next/image';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import { events } from '@/data/events';
-import { Calendar, Clock, MapPin, User } from 'lucide-react';
-=======
 import { events } from '@/data/events';
 import { EventCard } from '@/components/ui/EventCard';
->>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
 
 // Helper function to extract date object from date string
 const getEventDate = (dateStr) => {
@@ -64,10 +57,6 @@ const getUpcomingEvents = () => {
     })
     .slice(0, 6); // Show next 6 upcoming events
 };
-<<<<<<< HEAD
->>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
-=======
->>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
 
 const visionItems = [
   {
@@ -92,28 +81,9 @@ const visionItems = [
   }
 ];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-const eventItems = [
-  { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
-  { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
-  { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
-  { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
-  { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
-  { title: 'EVENT 1', description: 'This is a description for an upcoming event that will highlight a link to the details' },
-];
-
-export function Vision() {
-=======
 export function Vision() {
   const upcomingEvents = getUpcomingEvents();
 
->>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
-=======
-export function Vision() {
-  const upcomingEvents = getUpcomingEvents();
-
->>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
   return (
     <div className="relative">
       {/* Vision Section */}
@@ -158,56 +128,11 @@ export function Vision() {
               Join us for these exciting opportunities to learn, grow, and connect with the HBCU community.
             </p>
           </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {eventItems.map((event, index) => (
-              <div
-                key={index}
-                className="bg-white/5 p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all cursor-pointer"
-              >
-                <h3 className="text-xl font-bold text-white mb-2">{event.title}</h3>
-                <p className="text-white/70 text-sm">{event.description}</p>
-              </div>
-            ))}
-          </div>
-=======
-=======
->>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
-          
           {upcomingEvents.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {upcomingEvents.map((event, index) => (
-<<<<<<< HEAD
-                <div
-                  key={index}
-                  className="bg-white/5 p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all cursor-pointer group"
-                >
-                  <div className="flex items-center gap-2 text-blue-400 mb-2">
-                    <Calendar className="h-4 w-4" />
-                    <span className="text-sm font-medium">{formatEventDate(event.date)}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-blue-400 transition-colors">
-                    {event.title}
-                  </h3>
-                  <div className="space-y-2 text-white/70 text-sm">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4" />
-                      <span>{event.time}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4" />
-                      <span>{event.location}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <User className="h-4 w-4" />
-                      <span>Host: {event.host}</span>
-                    </div>
-                  </div>
-=======
                 <div key={index} className="bg-white rounded-lg relative z-20">
                   <EventCard event={event} noShadow />
->>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
                 </div>
               ))}
             </div>
@@ -216,10 +141,6 @@ export function Vision() {
               <p>No upcoming events scheduled at this time. Please check back later!</p>
             </div>
           )}
-<<<<<<< HEAD
->>>>>>> 71d6ceef00fa3b4b3f39f59c88f30275fb3add89
-=======
->>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f
         </div>
         
         {/* Arc Design - Moved below content and adjusted z-index */}

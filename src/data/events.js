@@ -200,7 +200,7 @@ export const events = [
     host: "United Family Community and STEAM Hartford Middle School",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform"
   },
-  {
+ {
     id: "hof-6",
     type: EVENT_TYPES.HALL_OF_FAME,
     title: "Road To The Classic” Black College Football Hall of Fame HBCU Youth Football Tournament",
@@ -212,3 +212,4 @@ export const events = [
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform"
   }
 ]; 
+

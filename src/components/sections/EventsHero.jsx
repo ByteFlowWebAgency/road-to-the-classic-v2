@@ -1,22 +1,5 @@
 export function EventsHero() {
   return (
-<<<<<<< HEAD
-    <section className="relative bg-[#1a237e] py-24 text-white">
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Road To The Classic Events
-          </h1>
-          <p className="text-xl opacity-90 mb-8">
-            Join us for these exciting Black College Football Hall of Fame HBCU events throughout the season
-          </p>
-        </div>
-      </div>
-      <div className="absolute bottom-0 left-0 w-full h-16"></div>
-    </section>
-  )
-} 
-=======
     <section className="relative h-[500px] w-full overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0">
@@ -48,4 +31,3 @@ export function EventsHero() {
     </section>
   );
 }
->>>>>>> bf8f4a521af6c81923acab65eac6e2328b1e346f

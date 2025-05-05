@@ -33,9 +33,11 @@ export function Hero() {
             >
               Learn More
             </Button>
-            <Button>
-              variant="primary" size="lg" onClick=
-              {() => (window.location.href = "/contact")}
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => (window.location.href = "/contact")}
+            >
               Get Involved
             </Button>
           </div>

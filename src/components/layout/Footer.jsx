@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
@@ -75,10 +74,22 @@ export function Footer() {
             </Link>
             <h4 className="font-medium mb-2">Follow Us on Our Socials</h4>
             <div className="flex gap-4">
-              <Link href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" className="text-[#1a237e]" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                aria-label="Instagram"
+                className="text-[#1a237e]"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaInstagram className="h-6 w-6" />
               </Link>
-              <Link href="https://www.facebook.com/profile.php?id=61573107310164" aria-label="Facebook" className="text-[#1a237e]" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://www.facebook.com/profile.php?id=61573107310164"
+                aria-label="Facebook"
+                className="text-[#1a237e]"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaFacebook className="h-6 w-6" />
               </Link>
             </div>
@@ -86,7 +97,7 @@ export function Footer() {
         </div>
         <div className="mt-10 pt-6 border-t text-center text-sm text-gray-500">
           © 2025 Road To The Classic Inc. All rights reserved. | Website Design
-          • Developed by BYTEFLOW
+          • Developed by <a href="https://www.byteflow.us">BYTEFLOW</a>
         </div>
       </div>
     </footer>

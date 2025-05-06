@@ -7,7 +7,7 @@ export function Hero() {
       {/* Background Video */}
       <div className="absolute inset-0">
         <video
-          src="/images/Takling to a class-1.mp4"
+          src="/images/HomePage Video.mp4"
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
           muted

@@ -8,6 +8,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/components/ui/toast";
 import { cn } from "@/lib/utils";
@@ -33,12 +34,14 @@ const impactImages = [
   {
     src: "/images/IMG_6388.jpg",
     alt: "Students engaging in educational activities",
-    caption: "Transform a student&apos;s future: Your support helped 500+ youth access life-changing educational programs last year",
+    caption:
+      "Transform a student's future: Your support helped 500+ youth access life-changing educational programs last year",
   },
   {
     src: "/images/IMG_6387.jpg",
     alt: "Community mentorship program",
-    caption: "92% of our mentored students achieve their academic goals. Be the mentor they&apos;ll remember forever",
+    caption:
+      "92% of our mentored students achieve their academic goals. Be the mentor they'll remember forever",
   },
   {
     src: "/images/IMG_5781.jpg",
@@ -49,7 +52,8 @@ const impactImages = [
   {
     src: "/images/IMG_5142.jpg",
     alt: "STEM education workshop",
-    caption: "Build tomorrow&apos;s innovators: 78% of our STEM students pursue technology careers. Your support makes it possible",
+    caption:
+      "Build tomorrow's innovators: 78% of our STEM students pursue technology careers. Your support makes it possible",
   },
   {
     src: "/images/IMG_2729.jpg",
@@ -136,7 +140,7 @@ export default function ContactPage() {
       );
 
       showToast(
-        "Thank you for your message! We&apos;ve received your inquiry and will contact you shortly.",
+        "Thank you for your message! We've received your inquiry and will contact you shortly.",
         "success"
       );
       setFormSubmitted(true);
@@ -291,9 +295,9 @@ export default function ContactPage() {
               Join Our Mission
             </h3>
             <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-              Your time and expertise can transform a student&apos;s future. Whether
-              through mentorship, volunteering at events, or sharing your
-              professional experience, you can make a lasting impact in our
+              Your time and expertise can transform a student&apos;s future.
+              Whether through mentorship, volunteering at events, or sharing
+              your professional experience, you can make a lasting impact in our
               community.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -351,8 +355,9 @@ export default function ContactPage() {
                 Get In Touch
               </h2>
               <p className="text-gray-600 mb-8">
-                We&apos;d love to hear from you. Please use the contact information
-                below or fill out the form to get in touch with our team.
+                We&apos;d love to hear from you. Please use the contact
+                information below or fill out the form to get in touch with our
+                team.
               </p>
             </div>
 
@@ -401,44 +406,16 @@ export default function ContactPage() {
               <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/profile.php?id=61573107310164"
                   className="bg-[#1a237e] p-3 rounded-full text-white hover:bg-[#303f9f]"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-facebook"
-                  >
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                  </svg>
+                  <FaFacebook className="h-6 w-6" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   className="bg-[#1a237e] p-3 rounded-full text-white hover:bg-[#303f9f]"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-instagram"
-                  >
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                  </svg>
+                  <FaInstagram className="h-6 w-6" />
                 </a>
               </div>
             </div>

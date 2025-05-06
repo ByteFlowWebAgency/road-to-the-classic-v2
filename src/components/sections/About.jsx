@@ -1,68 +1,61 @@
-import Image from "next/image";
+import Image from "next/image"
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import Link from 'next/link'
 
 const corePrinciplesItems = [
   {
-    title: "Unity",
-    description:
-      "Celebrate cultural diversity and history through shared experiences.",
+    title: 'Unity',
+    description: 'Celebrate cultural diversity and history through shared experiences.',
   },
   {
-    title: "Self-Determination",
-    description:
-      "Empower students to pursue education and goals through mentorship.",
+    title: 'Self-Determination',
+    description: 'Empower students to pursue education and goals through mentorship.',
   },
   {
-    title: "Collective Work & Responsibility",
-    description:
-      "Build stronger communities across discipline and entrepreneurship.",
+    title: 'Collective Work & Responsibility',
+    description: 'Build stronger communities across discipline and entrepreneurship.',
   },
   {
-    title: "Purpose",
-    description:
-      "Guide youth to discover their unique talents and contributions.",
+    title: 'Purpose',
+    description: 'Guide youth to discover their unique talents and contributions.',
   },
   {
-    title: "Creativity",
-    description: "Foster innovation and artistic expression in all endeavors.",
+    title: 'Creativity',
+    description: 'Foster innovation and artistic expression in all endeavors.',
   },
   {
-    title: "Faith",
-    description: "Encourage self-actualization and belief in one's potential.",
+    title: 'Faith',
+    description: 'Encourage self-actualization and belief in one&apos;s potential.',
   },
 ];
 
 export function About() {
   return (
     <section className="pt-0 py-16 bg-white">
+
       {/* Our Mission & Our Vision Section*/}
       <div className="container mx-auto px-6 mt-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
           <div className="space-y-10">
+
             {/* Our Mission */}
             <div>
-              <h2 className="text-3xl font-bold mb-4 text-[#1a237e]">
-                Our Mission
-              </h2>
+              <h2 className="text-3xl font-bold mb-4 text-[#1a237e]">Our Mission</h2>
               <p className="text-gray-700 leading-relaxed">
-                Our mission is to increase the knowledge of the impact of
-                Historically Black Colleges and Universities on the building of
-                American society and the contributions of African Americans and
-                people of color that have influenced America through their
-                contributions to medicine, science, technology, innovation,
-                engineering, sports, arts, buisiness, and literature.
+                Our mission is to increase the knowledge of the impact of Historically Black Colleges and Universities
+                on the building of American society and the contributions of African Americans and people of color that
+                have influenced America through their contributions to medicine, science, technology, innovation,
+                engineering, sports, arts, buisiness, and literature. 
               </p>
             </div>
 
             {/* Our Vision */}
             <div>
-              <h2 className="text-3xl font-bold mb-4 text-[#1a237e]">
-                Our Vision
-              </h2>
+              <h2 className="text-3xl font-bold mb-4 text-[#1a237e]">Our Vision</h2>
               <p className="text-gray-700 leading-relaxed">
                 Our vision is to increase the capacity of students that consider
-                HBCU'S as the first option for attendance therefore giving birth
+                HBCU&apos;S as the first option for attendance therefore giving birth
                 to future leaders and Hall of Famers who have graduate from
                 these institutions.
               </p>
@@ -117,7 +110,7 @@ export function About() {
                 science, technology, engineering, media, performing arts,
                 entrepreneurship, spirituality(self-actualization), and team
                 building. Every program leads up to a celebration and expression
-                of talent during the weeks leading up to the "HCBU Classic" game
+                of talent during the weeks leading up to the &quot;HCBU Classic&quot; game
                 in the host city.
               </p>
             </div>
@@ -249,16 +242,15 @@ export function About() {
             sponsorship directly contributes to our mission.
           </p>
 
-          <Link href="/contact">
-            <Button
-              className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base md:px-15 md:py-5 text-[#1a237e]"
-              variant="outline"
-            >
-              Support Our Cause <span className="text-lg">→</span>
-            </Button>
-          </Link>
+          <Button
+            className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base md:px-15 md:py-5 text-[#1a237e]"
+            variant="outline"
+          >
+            Support Our Course <span className="text-lg">&rarr;</span>
+          </Button>
         </div>
       </section>
     </section>
-  );
+  )
 }
+

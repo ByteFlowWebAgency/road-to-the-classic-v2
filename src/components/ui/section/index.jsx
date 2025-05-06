@@ -24,12 +24,7 @@ export const Section = React.forwardRef(
     },
     ref
   ) => {
-    // Destructure fullWidth to prevent it from being passed to the DOM element
-
-    // Classes for the section element
     const sectionClasses = cn("py-16", bgVariants[background], className);
-
-    // Classes for the container div
     const containerClasses = cn(
       fullWidth ? "w-full px-4" : "container mx-auto px-4 md:px-6",
       containerClassName
@@ -44,5 +39,3 @@ export const Section = React.forwardRef(
 );
 
 Section.displayName = "Section";
-
-export default Section;

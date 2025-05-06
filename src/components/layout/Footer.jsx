@@ -59,6 +59,7 @@ export function Footer() {
           </div>
           <div>
             <h3 className="font-bold text-lg mb-4 border-b pb-2">Learn More</h3>
+
             <p className="text-gray-600 mb-4">
               Discover how you can support our mission today.
             </p>
@@ -77,13 +78,17 @@ export function Footer() {
                 href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 aria-label="Instagram"
                 className="text-[#1a237e]"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaInstagram className="h-6 w-6" />
               </Link>
               <Link
-                href="https://www.facebook.com/61573107310164/videos/494272420417120"
-                aria-label="LinkedIn"
+                href="https://www.facebook.com/profile.php?id=61573107310164"
+                aria-label="Facebook"
                 className="text-[#1a237e]"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaFacebook className="h-6 w-6" />
               </Link>
@@ -92,7 +97,7 @@ export function Footer() {
         </div>
         <div className="mt-10 pt-6 border-t text-center text-sm text-gray-500">
           © 2025 Road To The Classic Inc. All rights reserved. | Website Design
-          • Developed by BYTEFLOW
+          • Developed by <a href="https://www.byteflow.us">BYTEFLOW</a>
         </div>
       </div>
     </footer>

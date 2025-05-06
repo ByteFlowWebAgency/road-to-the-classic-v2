@@ -8,6 +8,8 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+      - ./public:/app/public
+      - next-cache:/app/.next/cache
     ports:
       - "3000:3000"
     environment:

@@ -8,6 +8,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/components/ui/toast";
 import { cn } from "@/lib/utils";
@@ -125,14 +126,12 @@ export default function ContactPage() {
 
   const onSubmit = async (data) => {
     try {
-      // Format the data to match EmailJS template parameters
       const templateParams = {
         from_name: data.name,
         reply_to: data.email,
         phone_number: data.number,
         message: data.message,
       };
-
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
@@ -147,7 +146,10 @@ export default function ContactPage() {
       setFormSubmitted(true);
       reset();
     } catch (error) {
-      console.error("Error sending message:", error);
+      console.error(
+        "Error details:",
+        JSON.stringify(error, Object.getOwnPropertyNames(error))
+      );
       showToast(
         "Failed to send message. Please try again or contact us directly by phone.",
         "error"
@@ -162,7 +164,7 @@ export default function ContactPage() {
         {/* Background Video */}
         <div className="absolute inset-0">
           <video
-            src="/images/Contact us bg video.mp4"
+            src="/images/Self Defense-1.mp4"
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
             muted
@@ -179,20 +181,13 @@ export default function ContactPage() {
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
               CONTACT US
             </h1>
-            <p className="text-2xl md:text-3xl font-light text-white mb-8 leading-tight">
+            <p className="text-xl text-white/90 leading-relaxed">
               Get in touch with us and discover how we can work together to make
               a difference.
             </p>
           </div>
         </div>
       </section>
-
-      {/* <div className="text-center bg-[#1a237e] p-6">        
-        <h1 className="text-3xl font-bold text-center text-white mb-6">Contact Us</h1>
-        <p className="text-white text-center mb-6 leading-relaxed">
-          Get in touch with us and discover how we can work together to make a difference.
-        </p>
-      </div> */}
 
       {/* Partners Section */}
       <div className="bg-gray-50">
@@ -300,9 +295,9 @@ export default function ContactPage() {
               Join Our Mission
             </h3>
             <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-              Your time and expertise can transform a student's future. Whether
-              through mentorship, volunteering at events, or sharing your
-              professional experience, you can make a lasting impact in our
+              Your time and expertise can transform a student&apos;s future.
+              Whether through mentorship, volunteering at events, or sharing
+              your professional experience, you can make a lasting impact in our
               community.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -360,8 +355,9 @@ export default function ContactPage() {
                 Get In Touch
               </h2>
               <p className="text-gray-600 mb-8">
-                We'd love to hear from you. Please use the contact information
-                below or fill out the form to get in touch with our team.
+                We&apos;d love to hear from you. Please use the contact
+                information below or fill out the form to get in touch with our
+                team.
               </p>
             </div>
 
@@ -410,44 +406,16 @@ export default function ContactPage() {
               <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/profile.php?id=61573107310164"
                   className="bg-[#1a237e] p-3 rounded-full text-white hover:bg-[#303f9f]"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-facebook"
-                  >
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                  </svg>
+                  <FaFacebook className="h-6 w-6" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/roadtotheclassic25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   className="bg-[#1a237e] p-3 rounded-full text-white hover:bg-[#303f9f]"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-instagram"
-                  >
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                  </svg>
+                  <FaInstagram className="h-6 w-6" />
                 </a>
               </div>
             </div>

@@ -8,6 +8,7 @@ export function UpcomingEvents({
   description = "Join us for these exciting Road to the Classic events",
   background = "gray-50",
   customEvents = null,
+
   titleColor = "primary",
 }) {
   const upcomingEvents = customEvents ?? events;
@@ -24,6 +25,7 @@ export function UpcomingEvents({
         >
           {title}
         </Heading2>
+
         {description && (
           <p className="text-lg text-gray-600 text-center mb-8">
             {description}

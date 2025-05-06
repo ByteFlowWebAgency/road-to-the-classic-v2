@@ -1,6 +1,7 @@
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 export function Mission() {
   return (
     <section className="py-16 bg-[#1a237e] text-white">

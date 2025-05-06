@@ -20,6 +20,7 @@ const formSchema = z.object({
     .max(15, { message: "Phone number cannot exceed 15 digits" })
     .regex(/^\d+$/, { message: "Phone number must contain only digits" })
     .optional()
+
     .or(z.literal("")),
   eventInterest: z.string().optional(),
   message: z.string().optional(),
@@ -57,7 +58,6 @@ export function EventsContactForm() {
       console.error("EmailJS public key is missing");
     }
   }, []);
-
   // Reset form after submission success (with timeout)
   useEffect(() => {
     let timer;
@@ -65,13 +65,13 @@ export function EventsContactForm() {
       timer = setTimeout(() => {
         setFormStatus({
           submitted: false,
+
           error: false,
         });
       }, 5000); // Reset after 5 seconds
     }
     return () => clearTimeout(timer);
   }, [formStatus.submitted]);
-
   const onSubmit = async (data) => {
     try {
       // Format the data to match EmailJS template parameters
@@ -79,6 +79,7 @@ export function EventsContactForm() {
         from_name: data.name,
         reply_to: data.email,
         phone_number: data.phone || "Not provided",
+
         message: data.message || "No message provided",
       };
 

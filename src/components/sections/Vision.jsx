@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { events } from '@/data/events';
-import { Calendar, Clock, MapPin, User } from 'lucide-react';
+import { EventCard } from '@/components/ui/EventCard';
 
 // Helper function to extract date object from date string
 const getEventDate = (dateStr) => {
@@ -120,42 +120,19 @@ export function Vision() {
 
       {/* Events Section with Arc Design */}
       <section className="relative bg-[#1a237e]">
-        <div className="container mx-auto px-4 pb-32">
+        {/* Events Container - Added z-index to ensure content stays above the arc */}
+        <div className="container mx-auto px-4 pb-32 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">UPCOMING EVENTS</h2>
             <p className="text-white/80">
               Join us for these exciting opportunities to learn, grow, and connect with the HBCU community.
             </p>
           </div>
-          
           {upcomingEvents.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {upcomingEvents.map((event, index) => (
-                <div
-                  key={index}
-                  className="bg-white/5 p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all cursor-pointer group"
-                >
-                  <div className="flex items-center gap-2 text-blue-400 mb-2">
-                    <Calendar className="h-4 w-4" />
-                    <span className="text-sm font-medium">{formatEventDate(event.date)}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-blue-400 transition-colors">
-                    {event.title}
-                  </h3>
-                  <div className="space-y-2 text-white/70 text-sm">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4" />
-                      <span>{event.time}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4" />
-                      <span>{event.location}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <User className="h-4 w-4" />
-                      <span>Host: {event.host}</span>
-                    </div>
-                  </div>
+                <div key={index} className="bg-white rounded-lg relative z-20">
+                  <EventCard event={event} noShadow />
                 </div>
               ))}
             </div>
@@ -166,8 +143,8 @@ export function Vision() {
           )}
         </div>
         
-        {/* Arc Design */}
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden" style={{ height: '15vw' }}>
+        {/* Arc Design - Moved below content and adjusted z-index */}
+        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden z-0" style={{ height: '15vw' }}>
           <svg
             viewBox="0 0 100 100"
             preserveAspectRatio="none"

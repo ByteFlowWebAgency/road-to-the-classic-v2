@@ -29,8 +29,7 @@ const corePrinciplesItems = [
   },
   {
     title: "Faith",
-    description:
-      "Encourage self-actualization and belief in one&apos;s potential.",
+    description: "Encourage self-actualization and belief in one's potential.",
   },
 ];
 
@@ -118,8 +117,8 @@ export function About() {
                 science, technology, engineering, media, performing arts,
                 entrepreneurship, spirituality(self-actualization), and team
                 building. Every program leads up to a celebration and expression
-                of talent during the weeks leading up to the &quot;HCBU
-                Classic&quot; game in the host city.
+                of talent during the weeks leading up to the "HCBU Classic" game
+                in the host city.
               </p>
             </div>
           </div>

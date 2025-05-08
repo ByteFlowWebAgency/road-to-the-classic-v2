@@ -187,18 +187,6 @@ export const events = [
       "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
   },
   {
-    id: "hof-3",
-    type: EVENT_TYPES.HALL_OF_FAME,
-    title:
-      "Road To The Classic Black College Football Hall of Fame HBCU Youth Football Tournament",
-    date: "August 15-17, 2025 (Fri-Sun)",
-    time: "Friday Registration, Saturday 8:00 AM - 8:00 PM, Sunday 8:00 AM - 2:00 PM",
-    location: "Hall of Fame Football Fields",
-    host: "L.A.V.A. Athletics",
-    registrationLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
-  },
-  {
     id: "hof-4",
     type: EVENT_TYPES.HALL_OF_FAME,
     title:

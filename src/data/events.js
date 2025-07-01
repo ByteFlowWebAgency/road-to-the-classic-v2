@@ -5,26 +5,11 @@ export const EVENT_TYPES = {
 };
 
 export const events = [
-  // Road To Classic Events
-  {
-    id: "rtc-1",
-    type: EVENT_TYPES.ROAD_TO_CLASSIC,
-    title:
-      "Road To The Classic Black College Football Hall of Fame HBCU Youth Entrepreneur Expo",
-    date: "August 16, 2025",
-    time: "12:00 PM - 6:00 PM",
-    location: "Crenshaw Park",
-    host: "Future Promise",
-    contact: "Tori Fontes",
-    contactEmail: "ToriFontes@gmail.com",
-    registrationLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
-  },
   {
     id: "rtc-2",
     type: EVENT_TYPES.ROAD_TO_CLASSIC,
     title:
-      "Road To The Classic Black College Football Hall of Fame HBCU Cheer & Dance Competition",
+      "Road To The Classic Black College Football Hall of Fame HBCU Cheer & Dance Camp",
     date: "August 12-14, 2025 (Tues-Thurs)",
     time: "9:00 AM - 3:00 PM (Aug 12-13), 9:00 AM - 12:00 PM (Aug 14)",
     location: 'Edward "Peel" Coleman',
@@ -34,20 +19,7 @@ export const events = [
     registrationLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
   },
-  {
-    id: "rtc-3",
-    type: EVENT_TYPES.ROAD_TO_CLASSIC,
-    title:
-      "Road To The Classic Black College Football Hall of Fame HBCU Youth Football Tournament",
-    date: "August 16, 2025 (Fri-Sun)",
-    time: "12:00 PM - 6:00 PM",
-    location: "Crenshaw Park",
-    host: "L.A.V.A. Athletics",
-    contact: "Raymond Trice",
-    contactEmail: "raytrice63@gmail.com",
-    registrationLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
-  },
+
   {
     id: "rtc-4",
     type: EVENT_TYPES.ROAD_TO_CLASSIC,
@@ -63,20 +35,7 @@ export const events = [
       "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
     videoLink: "https://www.facebook.com/watch/?v=4243628119197454",
   },
-  {
-    id: "rtc-5",
-    type: EVENT_TYPES.ROAD_TO_CLASSIC,
-    title:
-      "Road To The Classic Black College Football Hall of Fame HBCU STEAM Fair and Live Inventors Museum",
-    date: "August 23, 2025",
-    time: "10:00 AM - 3:00 PM",
-    location: "Hartford STEAM Middle School",
-    host: "United Family Community and STEAM Hartford Middle School",
-    contact: "Marcus Bentley",
-    contactEmail: "mbentley@roadtoclassic.org",
-    registrationLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
-  },
+
   {
     id: "rtc-7",
     type: EVENT_TYPES.ROAD_TO_CLASSIC,
@@ -157,56 +116,6 @@ export const events = [
     host: "Road To the Classic Inc. and WE All in",
     contact: "Marcus Bentley",
     contactEmail: "mbentley@roadtoclassic.org",
-    registrationLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
-  },
-
-  // Hall of Fame Events
-  {
-    id: "hof-1",
-    type: EVENT_TYPES.HALL_OF_FAME,
-    title:
-      "Road To The Classic Black College Football Hall of Fame HBCU Youth Entrepreneur Expo",
-    date: "Thu, June 19, 2025",
-    time: "12:00 PM - 6:00 PM",
-    location: "Crenshaw Park",
-    host: "Future Promise",
-    registrationLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
-  },
-  {
-    id: "hof-2",
-    type: EVENT_TYPES.HALL_OF_FAME,
-    title:
-      "Road To The Classic Black College Football Hall of Fame HBCU Cheer & Dance Competition",
-    date: "August 12-14, 2025 (Tues-Thurs)",
-    time: "9:00 AM - 3:00 PM (Aug 12-13), 9:00 AM - 12:00 PM (Aug 14)",
-    location: 'Edward "Peel" Coleman',
-    host: "Road To The Classic Inc.",
-    registrationLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
-  },
-  {
-    id: "hof-4",
-    type: EVENT_TYPES.HALL_OF_FAME,
-    title:
-      "Road To The Classic Black College Football Hall of Fame HBCU Spelling Bee",
-    date: "Fri, August 22, 2025",
-    time: "6:00 PM - 8:00 PM (TBA)",
-    location: "Nash Family Center",
-    host: "L.A.V.A. Athletics/Crouse CLC",
-    registrationLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
-  },
-  {
-    id: "hof-5",
-    type: EVENT_TYPES.HALL_OF_FAME,
-    title:
-      "Road To The Classic Black College Football Hall of Fame HBCU STEAM Fair and Live Inventors Museum",
-    date: "Sat, August 23, 2025",
-    time: "10:00 AM - 3:00 PM",
-    location: "Hartford STEAM Middle School",
-    host: "United Family Community and STEAM Hartford Middle School",
     registrationLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
   },

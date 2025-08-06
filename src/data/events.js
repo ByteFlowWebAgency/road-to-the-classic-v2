@@ -103,7 +103,7 @@ export const events = [
     contact: "Prophet Lisa Smith",
     contactEmail: "theroyalscourt@gmail.com",
     registrationLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSc3YGaQZ0SrHAWXTCy_0xg2-es1jgN4_guudj71Hfxxe0C7Vg/viewform",
+      "https://www.eventbrite.com/e/1502177807259?aff=oddtdtcreator",
   },
   {
     id: "rtc-12",
